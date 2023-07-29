@@ -1,0 +1,11 @@
+.iconContainer {
+  height: 152px;
+  width: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & a {
+    display: flex;
+  }
+}

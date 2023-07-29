@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Giorgio Sans LC";
+    src: url("/fonts/GiorgioSansLC-Regular.woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Giorgio Sans LC";
+    src: url("/fonts/GiorgioSansLC-Light.woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+.giorgio * {
+    font-family: "Giorgio Sans LC", sans-serif;
+}

@@ -1,0 +1,437 @@
+<template>
+  <div :class="$style.background">
+    <Container :class="`${$style.container}`">
+      <div :class="`${$style.mainContainer}`">
+        <div>
+          <div :class="`${$style.logoMobile}`">
+              <Donut third-hide right/>
+            <div :class="`${$style.logoFlex}`">
+              <NuxtLink to="/equipment">
+                <ArrowLeftIcon border/>
+              </NuxtLink>
+                <Donut first-hide second-hide :class="`${$style.iconRight}`"/>
+              <NuxtLink to="/equipment/server-equipment">
+                <ArrowRightIcon border/>
+              </NuxtLink>
+            </div>
+          </div>
+          <div :class="`${$style.titleContainer}`">
+            <div :class="styleCommon.iconContainer">
+              <NuxtLink to="/equipment/server-equipment" :class="`${$style.link}`">
+                <Donut third-hide right :class="$style.iconLeft" />
+              </NuxtLink>
+            </div>
+            <h2 :class="`${$style.pageName} ${$style.text}`">СИСТЕМА ХРАНЕНИЯ ДАННЫХ</h2>
+            <div :class="styleCommon.iconContainer">
+              <Donut first-hide second-hide :class="$style.iconRighter" />
+            </div>
+          </div>
+          <div :class="`${$style.textContainer}`">
+            <p :class="`${$style.text} ${$style.textDesc}`">
+              Предлагаем решения, которые гарантируют целостность и доступность обрабатываемой и
+              хранимой информации на системах хранения данных и на резервных копиях. Подбираем
+              оборудование по заявленным техническим характеристикам, а также помогаем с разработкой
+              технических заданий и спецификаций. Поставляем только оригинальную продукцию Dell,
+              HPE, Huawei, IBM и других ведущих мировых производителей, с обеспечением заводской
+              гарантии вендора. Дополнительно предлагаем расширенную гарантию уровня 8x5 NBD и 24х7.
+              Средний срок поставки от 10-12 недель.
+            </p>
+            <p :class="`${$style.text} ${$style.textDescWhite}`">
+              Для получения индивидуального коммерческого предложения, заполните необходимые
+              параметры конфигуратора и отправьте нам запрос.
+            </p>
+          </div>
+          <div :class="`${$style.types}`">
+            <p :class="`${$style.text} ${$style.textType}`">ПРОИЗВОДСТВО</p>
+            <div :class="`${$style.buttonContainer}`">
+              <div v-for="item in production" :key="item.id">
+                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+              </div>
+            </div>
+          </div>
+          <div :class="`${$style.types}`">
+            <p :class="`${$style.text} ${$style.textType}`">ТИП</p>
+            <div :class="`${$style.buttonContainer}`">
+              <div v-for="item in type" :key="item.id">
+                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+              </div>
+            </div>
+          </div>
+          <div :class="`${$style.types}`">
+            <p :class="`${$style.text} ${$style.textType}`">КЭШ КОНТРОЛЛЕРА</p>
+            <div :class="`${$style.buttonContainer}`">
+              <div v-for="item in cache" :key="item.id">
+                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+              </div>
+            </div>
+          </div>
+          <div :class="`${$style.types}`">
+            <p :class="`${$style.text} ${$style.textType}`">ВЫСОТА</p>
+            <div :class="`${$style.buttonContainer}`">
+              <div v-for="item in height" :key="item.id">
+                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+              </div>
+            </div>
+          </div>
+          <div :class="`${$style.types}`">
+            <p :class="`${$style.text} ${$style.textType}`">ОБЪЕМ ХРАНЕНИЯ</p>
+            <div :class="`${$style.buttonContainer}`">
+              <div v-for="item in volume" :key="item.id">
+                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+              </div>
+            </div>
+          </div>
+          <div :class="`${$style.textSpec}`">
+            <button :class="`${$style.buttonForm} ${$style.text}`">Отправить заявку</button>
+          </div>
+        </div>
+        <div :class="`${$style.imgContainer}`">
+          <div :class="`${$style.imgWrapper}`">
+            <img src="/images/equpment-img.png" />
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
+</template>
+
+<script setup lang="ts">
+import ArrowLeftIcon from "~/components/svg/ArrowLeftIcon.vue";
+import ArrowRightIcon from "~/components/svg/ArrowRightIcon.vue";
+import Donut from "~/components/svg/Donut.vue";
+import styleCommon from "~/scss/modules/equipment.module.scss";
+
+const production = [
+  {
+    id: 1,
+    type: "Иностранное",
+  },
+  {
+    id: 2,
+    type: "Российское",
+  },
+];
+
+const type = [
+  {
+    id: 1,
+    type: "SAN",
+  },
+  {
+    id: 2,
+    type: "NAS",
+  },
+  {
+    id: 3,
+    type: "DAS",
+  },
+  {
+    id: 4,
+    type: "JBOD",
+  },
+];
+
+const cache = [
+  {
+    id: 1,
+    type: "2ГБ",
+  },
+  {
+    id: 2,
+    type: "4ГБ",
+  },
+  {
+    id: 3,
+    type: "8ГБ",
+  },
+  {
+    id: 4,
+    type: "16ГБ",
+  },
+  {
+    id: 5,
+    type: "1ТБ",
+  },
+  {
+    id: 6,
+    type: "2ТБ",
+  },
+  {
+    id: 7,
+    type: "без кеша",
+  },
+  {
+    id: 8,
+    type: "25U",
+  },
+  {
+    id: 9,
+    type: "42U",
+  },
+  {
+    id: 10,
+    type: "7U",
+  },
+];
+
+const height = [
+  {
+    id: 1,
+    type: "1U",
+  },
+  {
+    id: 2,
+    type: "2U",
+  },
+  {
+    id: 3,
+    type: "3U",
+  },
+  {
+    id: 4,
+    type: "4U",
+  },
+  {
+    id: 5,
+    type: "5U",
+  },
+  {
+    id: 6,
+    type: "7U",
+  },
+  {
+    id: 7,
+    type: "8U",
+  },
+  {
+    id: 8,
+    type: "10U",
+  },
+  {
+    id: 9,
+    type: "25U",
+  },
+  {
+    id: 10,
+    type: "42U",
+  },
+];
+
+const volume = [
+  {
+    id: 1,
+    type: "40ТБ",
+  },
+  {
+    id: 2,
+    type: "48ТБ",
+  },
+  {
+    id: 3,
+    type: "72ТБ",
+  },
+  {
+    id: 4,
+    type: "96ТБ",
+  },
+  {
+    id: 5,
+    type: "192ТБ",
+  },
+  {
+    id: 6,
+    type: "1ПБ",
+  },
+  {
+    id: 7,
+    type: "2ПБ",
+  },
+  {
+    id: 8,
+    type: "3ПБ",
+  },
+  {
+    id: 9,
+    type: "4ПБ",
+  },
+];
+</script>
+
+<style lang="scss" module>
+@import "scss/vars";
+
+.link {
+  margin: 0;
+}
+
+.background {
+  //background-color: $white;
+}
+
+.types {
+  padding: 0 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+}
+
+.text {
+  font-weight: 300;
+  letter-spacing: $text-default-spacing;
+}
+
+.titleContainer {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.pageName {
+  font-size: $text-xl;
+  color: $black;
+  margin: 0;
+  font-weight: 400;
+  padding: 0 20px;
+}
+
+.container {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.logo {
+  position: absolute;
+  left: -85px;
+  top: 75px;
+  padding-left: 20px;
+}
+
+.textDesc {
+  color: darken($grey, 100);
+  font-size: $text-default;
+}
+
+.textContainer {
+  max-width: 660px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.textDescWhite {
+  color: $black;
+  font-size: $text-default;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: $text-default;
+  color: $black;
+  background-color: $white;
+  border-radius: 5px;
+  border: solid $black 1px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.textType {
+  color: $black;
+  font-size: $text-default;
+}
+
+.textSpec {
+  max-width: 650px;
+  padding: 0 20px;
+}
+
+.buttonForm {
+  background-color: white;
+  border-radius: 10px;
+  font-size: $text-default;
+  border: solid $black 1px;
+  cursor: pointer;
+  padding: 5px 15px;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgContainer {
+  margin-bottom: auto;
+  margin-top: auto;
+  padding-right: 200px;
+}
+
+.logoMobile {
+  display: none;
+  margin-top: 100px;
+}
+
+.iconRighter {
+  height: 80px;
+}
+
+.iconLeft {
+  height: 70px;
+}
+
+@media screen and (max-width: 1580px) {
+  .logo {
+    left: 0;
+    position: static;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .imgContainer {
+    display: none;
+  }
+
+  .iconRight {
+    transform: rotate(180deg);
+  }
+
+  .iconRighter {
+    display: none;
+  }
+
+  .iconLeft {
+    display: none;
+  }
+
+  .logo2 {
+    display: none;
+  }
+
+  .logoMobile {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .titleContainer {
+    margin-top: 30px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logoFlex {
+    display: flex;
+    align-items: center;
+  }
+}
+</style>

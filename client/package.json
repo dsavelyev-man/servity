@@ -1,0 +1,24 @@
+{
+    "name": "nuxt-app",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "devDependencies": {
+        "@nuxt/devtools": "latest",
+        "@types/node": "^18",
+        "nuxt": "^3.6.1"
+    },
+    "dependencies": {
+        "@types/scroll-to-element": "^2.0.2",
+        "sass": "^1.63.6",
+        "scroll-to-element": "^2.0.3",
+        "vue3-carousel": "^0.3.1",
+        "vue3-perfect-scrollbar": "^1.6.1",
+        "ymaps": "^0.2.1"
+    }
+}
