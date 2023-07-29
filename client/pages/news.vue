@@ -1,12 +1,12 @@
 <template>
   <Container>
     <p :class="`${$style.text} ${$style.pageTitle}`">НОВОСТИ</p>
-          <NuxtLink v-for="item in news" :key="item.id" :to="item.url" :class="`${$style.container} ${$style.link}`">
+          <NuxtLink v-for="item in news" :key="item.id" :to="item.to" :class="`${$style.container} ${$style.link}`">
             <img :src="item.image" :class="`${$style.image}`" />
             <div :class="`${$style.textContainer}`">
-              <p :class="`${$style.textDate} ${$style.text}`">{{ item.date }}</p>
-              <p :class="`${$style.newsName} ${$style.text}`">{{ item.newsName }}</p>
-              <p :class="`${$style.newsDes} ${$style.text}`">{{ item.newsDes }}</p>
+              <p :class="`${$style.textDate} ${$style.text}`">{{ item.created_at }}</p>
+              <p :class="`${$style.newsName} ${$style.text}`">{{ item.label }}</p>
+              <p :class="`${$style.newsDes} ${$style.text}`">{{ item.description }}</p>
             </div>
           </NuxtLink>
   </Container>
@@ -17,10 +17,10 @@ const news = [
   {
     id: 1,
     image: "/images/newsTest.png",
-    date: "05.04.2023",
-    url: "/author-project",
-    newsName: "Servity запускает авторский проект на телеканале Про Бизнесс",
-    newsDes:
+    created_at: "05.04.2023",
+    to: "/author-project",
+    label: "Servity запускает авторский проект на телеканале Про Бизнесс",
+    description:
       "“IT сегодня” - Новая программа на телеканале Про Бизнесс. В гости к Аворам проекта приходят представители IT-индустрии и делятся своим экспертным мнением взглядом на проиходнящие изменения в отрасли, опытом внедрения цифровых проектов и обсуждают  перспективы развития отецественного технологического стека.",
   },
 ];
