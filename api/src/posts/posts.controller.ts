@@ -1,25 +1,25 @@
-import {Controller, Get, Post, Body, Patch, Param, Delete, Res} from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Res, UseInterceptors } from "@nestjs/common";
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import {from, map} from "rxjs";
+import { FileInterceptor } from "@nestjs/platform-express";
+import { SaveFile } from "../decorators/SaveFile.decorator";
 
 @Controller('posts')
 export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
   @Post()
-  create(@Body() createPostDto: CreatePostDto) {
-    return this.postsService.create(createPostDto);
+  @UseInterceptors(FileInterceptor('image'))
+  create(@Body() createPostDto: CreatePostDto, @SaveFile() image) {
+
+    return this.postsService.create(createPostDto, image);
   }
 
   @Get()
-  findAll(@Res() res) {
-    return from(this.postsService.findAll()).pipe(map((posts) => {
-      res.setHeader("X-Total-Count", posts.length)
-
-      res.json(posts)
-    }));
+  findAll() {
+    return this.postsService.findAll()
   }
 
   @Get(':id')

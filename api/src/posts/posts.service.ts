@@ -10,8 +10,14 @@ export class PostsService {
   constructor(@InjectRepository(Post) private postsRepository: Repository<Post>) {
   }
 
-  create(createPostDto: CreatePostDto) {
-    return 'This action adds a new post';
+  create(createPostDto: CreatePostDto, image: string) {
+
+    const post = this.postsRepository.create({
+      ...createPostDto,
+      image
+    })
+
+    return post;
   }
 
   findAll() {

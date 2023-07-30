@@ -12,7 +12,7 @@ export class Post extends BaseEntity {
   to?: string
 
   @Column("char")
-  label: string
+  title: string
 
   @Column("text")
   description: string
