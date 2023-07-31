@@ -7,7 +7,7 @@
           IT СЕГОДНЯ – АВТОРСКИЙ ПРОЕКТ КОМПАНИИ SERVITY НА ТЕЛЕКАНАЛЕ ПРО БИЗНЕС
         </h3>
         <p :class="`${$style.text} ${$style.textDarkGrey}`">
-          Олег Белов, Директор по развитию SERVITY и герои программы обсуждают текущую повестку в
+          Олег Белов, Директор по развитию Servity и герои программы обсуждают текущую повестку в
           IT-бизнесе. Как проходит трансформация отечественного IT-рынка, какие вызовы стоят перед
           компаниями в эпоху цифровизации, как меняется технологический стек – ответы на эти вопросы
           в передаче IT сегодня.
@@ -28,15 +28,13 @@
   <Container>
     <div :class="`${$style.secondContainer}`">
       <div :class="`${$style.videoContainer}`" v-for="item in items" :key="item.id">
-        <iframe
-          :src="`${item.video}`"
-          height="300"
-          frameborder="no"
-          scrolling="no"
-          webkitallowfullscreen=""
-          mozallowfullscreen=""
-          allowfullscreen=""
-        ></iframe>
+          <NuxtLink :to="item.link">
+            <div :class="`${$style.video}`" :style="`background-image: url(${item.video})`">
+                <div :class="`${$style.svgBackground}`">
+                    <img :class="`${$style.svg}`" src="/images/play.svg">
+                </div>
+            </div>
+          </NuxtLink>
         <div :class="`${$style.textContainer}`">
           <p :class="`${$style.text} ${$style.textName}`">{{ item.name }}</p>
           <p :class="`${$style.text} ${$style.textJob}`">{{ item.job }}</p>
@@ -52,7 +50,8 @@ import DonutLogo from "~/components/logo/DonutLogo.vue";
 const items = [
   {
     id: 1,
-    video: "http://cloud.tvigle.ru/video/5828500/?playerId=49&partnerId=2398",
+    link: "http://cloud.tvigle.ru/video/5828500/?playerId=49&partnerId=2398",
+    video: "/images/videoPreview.png",
     name: "Владимир Федин",
     job: "Директор IT-департамента группы компаний «Инвитро»",
     desc:
@@ -63,21 +62,24 @@ const items = [
   },
   {
     id: 2,
-    video: "http://cloud.tvigle.ru/video/5828454/?playerId=49&partnerId=2398",
+    link: "http://cloud.tvigle.ru/video/5828454/?playerId=49&partnerId=2398",
+    video: "/images/videoPreview2.png",
     name: "Павел Чернышин",
     job: "Директор по развитию бизнеса «ТКО-Информ»",
     desc: "Обсуждаем, как проходит цифровизация отрасли обращения с отходами и какова роль регуляторов в формировании требований к цифровым решениям",
   },
   {
     id: 3,
-    video: "http://cloud.tvigle.ru/video/5828381/?playerId=49&partnerId=2398",
+    link: "http://cloud.tvigle.ru/video/5828381/?playerId=49&partnerId=2398",
+    video: "/images/videoPreview3.png",
     name: "Карим Кузахметов",
     job: "Вице-президент Sitronics Group",
     desc: "Какие задачи сегодня стоят перед Sitronics Group и как изменился подход к цифровизации за последний год. Что такое «умный город» и как развивается система «умного города» за пределами столицы",
   },
   {
     id: 4,
-    video: "http://cloud.tvigle.ru/video/5828205/?playerId=49&partnerId=2398",
+    link: "http://cloud.tvigle.ru/video/5828205/?playerId=49&partnerId=2398",
+    video: "/images/videoPreview4.png",
     name: "Андрей Ревяшко",
     job: "СТО компании «М.Видео-Эльдорадо»",
     desc: "В компании «М.Видео-Эльдорадо» активно развиваются процессы цифровизации. Андрей Ревяшко рассказал, какие инновационные решения дают технологическое преимущество для разработки интернет-магазинов и как компания улучшает пользовательский опыт своих клиентов.",
@@ -151,10 +153,48 @@ const items = [
   margin: 30px 0 20px;
 }
 
+.svg {
+  height: 30px;
+  padding: 15px 40px;
+  z-index: 3;
+}
+
+.svgBackground {
+  background: var(--bg-light, rgba(29, 29, 29, 0.85));
+  border-radius: 10px;
+  z-index: 3;
+}
+
+
 .textJob {
   color: $grey;
   font-size: $text-default;
   margin: 0;
+}
+
+.video {
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(100%);
+}
+
+.video:hover {
+  & .svgBackground {
+    background: $grey;
+  }
+}
+
+.video::after {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  height: 300px;
+  width: 100%;
 }
 
 .textDesc {
