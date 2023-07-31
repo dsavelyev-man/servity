@@ -51,7 +51,7 @@ const items = [
   {
     id: 1,
     link: "http://cloud.tvigle.ru/video/5828500/?playerId=49&partnerId=2398",
-    video: "/images/videoPreview.png",
+    video: "/images/videoPreview.jpg",
     name: "Владимир Федин",
     job: "Директор IT-департамента группы компаний «Инвитро»",
     desc:
@@ -63,7 +63,7 @@ const items = [
   {
     id: 2,
     link: "http://cloud.tvigle.ru/video/5828454/?playerId=49&partnerId=2398",
-    video: "/images/videoPreview2.png",
+    video: "/images/videoPreview2.jpg",
     name: "Павел Чернышин",
     job: "Директор по развитию бизнеса «ТКО-Информ»",
     desc: "Обсуждаем, как проходит цифровизация отрасли обращения с отходами и какова роль регуляторов в формировании требований к цифровым решениям",
@@ -71,7 +71,7 @@ const items = [
   {
     id: 3,
     link: "http://cloud.tvigle.ru/video/5828381/?playerId=49&partnerId=2398",
-    video: "/images/videoPreview3.png",
+    video: "/images/videoPreview3.jpg",
     name: "Карим Кузахметов",
     job: "Вице-президент Sitronics Group",
     desc: "Какие задачи сегодня стоят перед Sitronics Group и как изменился подход к цифровизации за последний год. Что такое «умный город» и как развивается система «умного города» за пределами столицы",
@@ -79,7 +79,7 @@ const items = [
   {
     id: 4,
     link: "http://cloud.tvigle.ru/video/5828205/?playerId=49&partnerId=2398",
-    video: "/images/videoPreview4.png",
+    video: "/images/videoPreview4.jpg",
     name: "Андрей Ревяшко",
     job: "СТО компании «М.Видео-Эльдорадо»",
     desc: "В компании «М.Видео-Эльдорадо» активно развиваются процессы цифровизации. Андрей Ревяшко рассказал, какие инновационные решения дают технологическое преимущество для разработки интернет-магазинов и как компания улучшает пользовательский опыт своих клиентов.",
