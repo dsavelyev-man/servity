@@ -5,16 +5,21 @@
         <p :class="`${$style.pageTitle} ${$style.text}`">КОНТАКТЫ</p>
         <p :class="`${$style.textWhiteLg} ${$style.text}`">ГОЛОВНОЙ ОФИС</p>
         <p :class="`${$style.textGrey} ${$style.text}`">
-          ООО «Аврора Технолоджис» 119049, г. Москва. ул. Шаболовка, 26, стр. 12
+          ООО «Аврора Технолоджис»
         </p>
-        <p :class="`${$style.textGrey}`">
+        <p :class="`${$style.textGrey} ${$style.text}`">
+          119049, г. Москва. ул. Шаболовка, 26, стр. 12
+        </p>
+        <p :class="`${$style.textGrey} ${$style.links} ${$style.text}`">
+          тел.{{ "\u00A0" }}
           <a href="tel:+74959020099" :class="`${$style.linkContent} ${$style.text}`">
             +74959020099
           </a>
         </p>
-        <p :class="`${$style.textGrey}`">
+        <p :class="`${$style.textGrey} ${$style.links} ${$style.text}`">
+          почта:{{ "\u00A0" }}
           <a href="mailto:info@servity.ru" :class="`${$style.linkContent} ${$style.text}`">
-            <img src="/images/snail.svg" :class="`${$style.snail}`" />
+
             info@servity.ru
           </a>
         </p>
@@ -81,6 +86,10 @@ const setShowPopup = () => {
 <style lang="scss" module>
 @import "scss/vars";
 
+.links {
+  display: flex;
+}
+
 .support {
   display: none;
 }
@@ -103,7 +112,6 @@ const setShowPopup = () => {
 }
 
 .button {
-  color: white;
   padding: 15px 25px;
   margin-bottom: 40px;
 }
@@ -120,7 +128,6 @@ const setShowPopup = () => {
 }
 
 .pageTitle {
-  color: white;
   font-size: $text-xl;
   margin-top: 0;
   margin-bottom: 2rem;
@@ -133,26 +140,22 @@ const setShowPopup = () => {
 }
 
 .textGrey {
-  color: $grey;
   font-size: 2.3rem;
   margin-top: 0;
 }
 
 .textWhiteLg {
-  color: white;
   font-size: 2.5rem;
   margin-top: 0;
 }
 
 .textWhite {
-  color: white;
   font-size: 2.3rem;
   margin-top: 0;
 }
 
 .linkContent {
   text-decoration: none;
-  color: $grey;
   font-size: 2.3rem;
   display: flex;
   align-items: center;

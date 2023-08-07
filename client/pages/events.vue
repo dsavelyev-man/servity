@@ -18,7 +18,9 @@
               :to="`/event/${item.id}`"
               :class="`${$style.textDate} ${$style.text} ${$style.link}`"
             >
-              Читать больше <img src="/images/arrow.svg" :class="`${$style.arrow}`" />
+              <Button :class="`${$style.button} ${$style.text}`">
+              Подробнее
+              </Button>
             </NuxtLink>
           </p>
         </div>
@@ -61,6 +63,10 @@ onMounted(() => {
 
 <style lang="scss" module>
 @import "scss/vars";
+
+.button {
+  color: $white;
+}
 
 .backgroundMain {
   //background-color: $white;
