@@ -35,7 +35,7 @@ const menus = {
   events: [
     {
       to: "/author-project",
-      label: "Авторский проект",
+      label: "ТВ-проект",
     },
     {
       to: "/events",

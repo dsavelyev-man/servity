@@ -45,7 +45,7 @@
           <li :class="`${$style.text} ${$style.listName}`">СОБЫТИЯ</li>
           <li :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/author-project" :class="`${$style.linkContent}`">
-              ТВ-проект
+              ТВ-ПРОЕКТ
             </NuxtLink>
           </li>
           <li :class="`${$style.text} ${$style.listContent}`">
