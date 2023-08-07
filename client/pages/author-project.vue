@@ -2,7 +2,7 @@
   <Container>
     <div :class="`${$style.heroBlock}`">
       <div :class="`${$style.container}`">
-        <h2 :class="`${$style.text} ${$style.pageTitle}`">АВТОРСКИЙ ПРОЕКТ</h2>
+        <h2 :class="`${$style.text} ${$style.pageTitle}`">ТВ-ПРОЕКТ</h2>
         <h3 :class="`${$style.text} ${$style.textLightGrey}`">
           IT СЕГОДНЯ – АВТОРСКИЙ ПРОЕКТ КОМПАНИИ SERVITY НА ТЕЛЕКАНАЛЕ ПРО БИЗНЕС
         </h3>
