@@ -43,47 +43,34 @@
             </p>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ИНОСТРАННОЕ ПРОИЗВОДСТВО</p>
+            <p :class="`${$style.text} ${$style.textType}`">ПРОИСХОЖДЕНИЕ</p>
             <div :class="`${$style.buttonContainer}`">
               <div v-for="item in production" :key="item.id">
-                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+                <button @click="() => setGlobal(item.global)" :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
               </div>
             </div>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">РОССИЙСКОЕ ПРОИЗВОДСТВО</p>
+            <p :class="`${$style.text} ${$style.textType}`">БРЕНД</p>
             <div :class="`${$style.buttonContainer}`">
-              <div v-for="item in type" :key="item.id">
+              <div v-for="item in type" :key="item.id" v-if="isGlobal">
+                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+              </div>
+              <div v-for="item in typeRussian" :key="item.id" v-else>
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
               </div>
             </div>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ВЫСОТА</p>
+            <p :class="`${$style.text} ${$style.textType}`">ЗАДАЧА</p>
             <div :class="`${$style.buttonContainer}`">
               <div v-for="item in height" :key="item.id">
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
               </div>
             </div>
           </div>
-          <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">КОЛИЧЕСТВО ПРОЦЕССОРОВ</p>
-            <div :class="`${$style.buttonContainer}`">
-              <div v-for="item in cache" :key="item.id">
-                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
-              </div>
-            </div>
-          </div>
-          <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ОБЪЕМ ПАМЯТИ</p>
-            <div :class="`${$style.buttonContainer}`">
-              <div v-for="item in volume" :key="item.id">
-                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
-              </div>
-            </div>
-          </div>
           <div :class="`${$style.textSpec}`">
-            <button :class="`${$style.buttonForm} ${$style.text}`">Отправить заявку</button>
+            <button :class="`${$style.buttonForm} ${$style.text}`">ОТПРАВИТЬ ЗАЯВКУ</button>
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
@@ -102,174 +89,134 @@ import ArrowRightIcon from "~/components/svg/ArrowRightIcon.vue";
 import styleCommon from "@/scss/modules/equipment.module.scss";
 import Donut from "~/components/svg/Donut.vue";
 
-const production = [
+const isGlobal = ref(false)
+const setGlobal = (global: boolean) => {
+  if (global) {
+    isGlobal.value = true
+  } else {
+    isGlobal.value = false
+  }
+}
+
+const typeRussian = [
   {
     id: 1,
-    type: "Dell",
+    type: "Рикор",
   },
   {
     id: 2,
-    type: "EMC",
+    type: "YADRO",
   },
   {
     id: 3,
-    type: "HPE",
+    type: "Aquarius",
   },
   {
     id: 4,
-    type: "Huawei",
+    type: "Sitronics",
   },
   {
     id: 5,
-    type: "Lenovo",
+    type: "DEPO Computers",
   },
   {
     id: 6,
-    type: "Cisco",
+    type: "Kraftway",
   },
+  {
+    id: 7,
+    type: "iCL",
+  },
+  {
+    id: 8,
+    type: "Qtech",
+  },
+  {
+    id: 9,
+    type: "Гравитон",
+  },
+  {
+    id: 10,
+    type: "Nerpa",
+  },
+  {
+    id: 11,
+    type: "БУЛАТ",
+  },
+]
+
+const production = [
+  {
+    id: 1,
+    type: "Российское",
+    global: false,
+  },
+  {
+    id: 2,
+    type: "Иностранное",
+    global: true,
+  }
 ];
 
 const type = [
   {
     id: 1,
-    type: "Depo",
+    type: "HPE",
   },
   {
     id: 2,
-    type: "Рикор",
+    type: "DELL",
   },
   {
     id: 3,
-    type: "QTech",
+    type: "Huawei",
   },
   {
     id: 4,
-    type: "iCL",
+    type: "Lenovo",
   },
   {
     id: 5,
-    type: "Kraftway",
+    type: "xFusion",
   },
   {
     id: 6,
-    type: "Yadro",
+    type: "Supermicro",
   },
   {
     id: 7,
-    type: "Aquarius",
-  },
-  {
-    id: 8,
-    type: "Гравитон",
-  },
-];
-
-const cache = [
-  {
-    id: 1,
-    type: "1",
-  },
-  {
-    id: 2,
-    type: "2",
-  },
-  {
-    id: 3,
-    type: "4",
-  },
-  {
-    id: 4,
-    type: "8",
-  },
+    type: "Cisco"
+  }
 ];
 
 const height = [
   {
     id: 1,
-    type: "1U",
+    type: "Сервер виртуализации",
   },
   {
     id: 2,
-    type: "2U",
+    type: "Сервер баз данных",
   },
   {
     id: 3,
-    type: "3U",
+    type: "Сервер хранения",
   },
   {
     id: 4,
-    type: "4U",
+    type: "Сервер OLTP",
   },
   {
     id: 5,
-    type: "5U",
+    type: "Сервер видеонаблюдения",
   },
   {
     id: 6,
-    type: "7U",
+    type: "Сервер приложений",
   },
   {
     id: 7,
-    type: "8U",
-  },
-  {
-    id: 8,
-    type: "10U",
-  },
-  {
-    id: 9,
-    type: "25U",
-  },
-  {
-    id: 10,
-    type: "42U",
-  },
-];
-
-const volume = [
-  {
-    id: 1,
-    type: "64ГБ",
-  },
-  {
-    id: 2,
-    type: "128ГБ",
-  },
-  {
-    id: 3,
-    type: "256ГБ",
-  },
-  {
-    id: 4,
-    type: "512ГБ",
-  },
-  {
-    id: 5,
-    type: "6144ГБ",
-  },
-  {
-    id: 6,
-    type: "12288ГБ",
-  },
-  {
-    id: 7,
-    type: "1024ГБ",
-  },
-  {
-    id: 8,
-    type: "2048ГБ",
-  },
-  {
-    id: 9,
-    type: "3072ГБ",
-  },
-  {
-    id: 10,
-    type: "4096ГБ",
-  },
-  {
-    id: 11,
-    type: "24576ГБ",
+    type: "Web-сервер",
   },
 ];
 </script>
@@ -313,6 +260,8 @@ const volume = [
   margin: 0;
   font-weight: 400;
   padding: 0 20px;
+  line-height: 6rem;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -359,7 +308,7 @@ const volume = [
   border: 1px solid white;
   margin-right: 10px;
   margin-bottom: 10px;
-  width: 120px;
+  width: 300px;
   cursor: pointer;
   border: solid $black 1px;
 }
@@ -380,7 +329,7 @@ const volume = [
   font-size: $text-default;
   border: solid $black 1px;
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 12px 25px;
   font-weight: 400;
   margin-top: 30px;
 }
@@ -396,17 +345,16 @@ const volume = [
 }
 
 .imgContainer {
-  margin-bottom: auto;
-  margin-top: auto;
+  margin-top: 300px;
   padding-right: 200px;
 }
 
 .icon {
-  height: 65px;
+  height: 50px;
 }
 
 .iconLeft {
-  height: 70px;
+  height: 50px;
 }
 
 @media screen and (max-width: 1580px) {

@@ -127,6 +127,7 @@ const setShowPopup = () => {
 }
 
 .text {
+  color: $black;
   font-weight: 300;
   letter-spacing: $text-default-spacing;
 }

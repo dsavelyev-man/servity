@@ -34,9 +34,20 @@
             </p>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ПРОИЗВОДСТВО</p>
+            <p :class="`${$style.text} ${$style.textType}`">ПРОИСХОЖДЕНИЕ</p>
             <div :class="`${$style.buttonContainer}`">
               <div v-for="item in production" :key="item.id">
+                <button :class="`${$style.button} ${$style.text}`" @click="() => setGlobal(item.global)">{{ item.type }}</button>
+              </div>
+            </div>
+          </div>
+          <div :class="`${$style.types}`">
+            <p :class="`${$style.text} ${$style.textType}`">БРЕНД</p>
+            <div :class="`${$style.buttonContainer}`">
+              <div v-for="item in type" :key="item.id" v-if="isGlobal">
+                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+              </div>
+              <div v-for="item in typeRussian" :key="item.id" v-else>
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
               </div>
             </div>
@@ -44,7 +55,7 @@
           <div :class="`${$style.types}`">
             <p :class="`${$style.text} ${$style.textType}`">ТИП</p>
             <div :class="`${$style.buttonContainer}`">
-              <div v-for="item in type" :key="item.id">
+              <div v-for="item in cache" :key="item.id">
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
               </div>
             </div>
@@ -52,29 +63,13 @@
           <div :class="`${$style.types}`">
             <p :class="`${$style.text} ${$style.textType}`">КЛАСС (ДЛЯ КОММУТАТОРОВ)</p>
             <div :class="`${$style.buttonContainer}`">
-              <div v-for="item in cache" :key="item.id">
-                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
-              </div>
-            </div>
-          </div>
-          <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">КОЛИЧЕСТВО ПОРТОВ</p>
-            <div :class="`${$style.buttonContainer}`">
-              <div v-for="item in height" :key="item.id">
-                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
-              </div>
-            </div>
-          </div>
-          <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ТИП ПОРТОВ</p>
-            <div :class="`${$style.buttonContainer}`">
               <div v-for="item in volume" :key="item.id">
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
               </div>
             </div>
           </div>
           <div :class="`${$style.textSpec}`">
-            <button :class="`${$style.buttonForm} ${$style.text}`">Отправить заявку</button>
+            <button :class="`${$style.buttonForm} ${$style.text}`">ОТПРАВИТЬ ЗАЯВКУ</button>
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
@@ -96,17 +91,72 @@ const production = [
   {
     id: 1,
     type: "Иностранное",
+    global: true,
   },
   {
     id: 2,
     type: "Российское",
+    global: false,
   },
 ];
 
-const type = [
+const typeRussian = [
   {
     id: 1,
-    type: "Коммунатор",
+    type: "Eltex"
+  },
+  {
+    id: 2,
+    type: "Qtech"
+  },
+  {
+    id: 3,
+    type: "БУЛАТ"
+  },
+]
+
+const isGlobal = ref(false)
+const setGlobal = (global: boolean) => {
+  if (global) {
+    isGlobal.value = true
+  } else {
+    isGlobal.value = false
+  }
+}
+
+const type = [
+  {
+    type: "HPE Aruba",
+  },
+  {
+    type: "DELL",
+  },
+  {
+    type: "Huawei",
+  },
+  {
+    type: "H3C",
+  },
+  {
+    type: "Extreme Networks",
+  },
+  {
+    type: "Cisco",
+  },
+  {
+    type: "Brocade",
+  },
+  {
+    type: "Juniper",
+  },
+].map((item, index) => ({
+  ...item, id: index
+}));
+
+const cache = [
+  {
+    id: 1,
+    type: "Коммутатор",
   },
   {
     id: 2,
@@ -119,10 +169,10 @@ const type = [
   {
     id: 4,
     type: "Оптический коммутатор",
-  },
+  }
 ];
 
-const cache = [
+const volume = [
   {
     id: 1,
     type: "Доступа",
@@ -134,61 +184,7 @@ const cache = [
   {
     id: 3,
     type: "Агрегации",
-  },
-];
-
-const height = [
-  {
-    id: 1,
-    type: "8",
-  },
-  {
-    id: 2,
-    type: "16",
-  },
-  {
-    id: 3,
-    type: "24",
-  },
-  {
-    id: 4,
-    type: "32",
-  },
-  {
-    id: 5,
-    type: "48",
-  },
-  {
-    id: 6,
-    type: "64",
-  },
-];
-
-const volume = [
-  {
-    id: 1,
-    type: "RJ-45",
-  },
-  {
-    id: 2,
-    type: "SFP",
-  },
-  {
-    id: 3,
-    type: "SFP+",
-  },
-  {
-    id: 4,
-    type: "SFP28",
-  },
-  {
-    id: 5,
-    type: "QSFP",
-  },
-  {
-    id: 6,
-    type: "QSFP28",
-  },
+  }
 ];
 </script>
 
@@ -231,6 +227,8 @@ const volume = [
   margin: 0;
   font-weight: 400;
   padding: 0 20px;
+  line-height: 6rem;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -272,7 +270,7 @@ const volume = [
   border: 1px solid white;
   margin-right: 10px;
   margin-bottom: 10px;
-  width: 200px;
+  width: 300px;
   cursor: pointer;
   border: solid $black 1px;
 }
@@ -297,7 +295,7 @@ const volume = [
   font-size: $text-default;
   border: none;
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 12px 25px;
   font-weight: 400;
   margin-top: 30px;
   border: solid black 1px;
@@ -309,8 +307,7 @@ const volume = [
 }
 
 .imgContainer {
-  margin-bottom: auto;
-  margin-top: auto;
+  margin-top: 300px;
   padding-right: 200px;
 }
 
@@ -319,7 +316,7 @@ const volume = [
 }
 
 .icon {
-  height: 70px;
+  height: 50px;
 }
 
 @media screen and (max-width: 1024px) {

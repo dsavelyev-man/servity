@@ -21,7 +21,7 @@
                 <Donut third-hide right :class="$style.iconLeft" />
               </NuxtLink>
             </div>
-            <h2 :class="`${$style.pageName} ${$style.text}`">СИСТЕМА ХРАНЕНИЯ ДАННЫХ</h2>
+            <h2 :class="`${$style.pageName} ${$style.text}`">СИСТЕМЫ ХРАНЕНИЯ ДАННЫХ</h2>
             <div :class="styleCommon.iconContainer">
               <Donut first-hide second-hide :class="$style.iconRighter" />
             </div>
@@ -42,23 +42,26 @@
             </p>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ПРОИЗВОДСТВО</p>
+            <p :class="`${$style.text} ${$style.textType}`">ПРОИCХОЖДЕНИЕ</p>
             <div :class="`${$style.buttonContainer}`">
               <div v-for="item in production" :key="item.id">
-                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+                <button :class="`${$style.button} ${$style.text}`" @click="() => setGlobal(item.global)">{{ item.type }}</button>
               </div>
             </div>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ТИП</p>
+            <p :class="`${$style.text} ${$style.textType}`">БРЕНД</p>
             <div :class="`${$style.buttonContainer}`">
-              <div v-for="item in type" :key="item.id">
+              <div v-for="item in type" :key="item.id" v-if="isGlobal">
+                <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
+              </div>
+              <div v-for="item in typeRussian" :key="item.id" v-else>
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
               </div>
             </div>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">КЭШ КОНТРОЛЛЕРА</p>
+            <p :class="`${$style.text} ${$style.textType}`">ЗАДАЧА СХД</p>
             <div :class="`${$style.buttonContainer}`">
               <div v-for="item in cache" :key="item.id">
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
@@ -66,7 +69,7 @@
             </div>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ВЫСОТА</p>
+            <p :class="`${$style.text} ${$style.textType}`">ТИП МАСШТАБИРОВАНИЯ</p>
             <div :class="`${$style.buttonContainer}`">
               <div v-for="item in height" :key="item.id">
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
@@ -74,7 +77,7 @@
             </div>
           </div>
           <div :class="`${$style.types}`">
-            <p :class="`${$style.text} ${$style.textType}`">ОБЪЕМ ХРАНЕНИЯ</p>
+            <p :class="`${$style.text} ${$style.textType}`">УРОВЕНЬ ОТКАЗОУСТОЙЧИВОСТИ</p>
             <div :class="`${$style.buttonContainer}`">
               <div v-for="item in volume" :key="item.id">
                 <button :class="`${$style.button} ${$style.text}`">{{ item.type }}</button>
@@ -82,7 +85,7 @@
             </div>
           </div>
           <div :class="`${$style.textSpec}`">
-            <button :class="`${$style.buttonForm} ${$style.text}`">Отправить заявку</button>
+            <button :class="`${$style.buttonForm} ${$style.text}`">ОТПРАВИТЬ ЗАЯВКУ</button>
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
@@ -101,159 +104,124 @@ import ArrowRightIcon from "~/components/svg/ArrowRightIcon.vue";
 import Donut from "~/components/svg/Donut.vue";
 import styleCommon from "~/scss/modules/equipment.module.scss";
 
+const isGlobal = ref(false)
+const setGlobal = (global: boolean) => {
+  if (global) {
+    isGlobal.value = true
+  } else {
+    isGlobal.value = false
+  }
+}
+
 const production = [
   {
     id: 1,
     type: "Иностранное",
+    global: true
   },
   {
     id: 2,
     type: "Российское",
+    global: false
   },
 ];
 
 const type = [
   {
     id: 1,
-    type: "SAN",
+    type: "HPE",
   },
   {
     id: 2,
-    type: "NAS",
+    type: "DELL",
   },
   {
     id: 3,
-    type: "DAS",
+    type: "Huawei",
   },
   {
     id: 4,
-    type: "JBOD",
+    type: "Lenovo",
+  },
+  {
+    id: 5,
+    type: "xFusion",
+  },
+  {
+    id: 6,
+    type: "Supermicro",
+  },
+  {
+    id: 7,
+    type: "Cisco",
   },
 ];
+
+const typeRussian = [
+  {
+    type: "AERODISK"
+  },
+  {
+    type: "BAUM"
+  },
+  {
+    type: "RAIDIX"
+  },
+  {
+    type: "DEPO"
+  },
+  {
+    type: "Nerpa"
+  },
+  {
+    type: "YADRO"
+  },
+  {
+    type: "БУЛАТ"
+  },
+].map((item, index) => ({
+  ...item, id: index
+}))
 
 const cache = [
   {
     id: 1,
-    type: "2ГБ",
+    type: "Хранение \"горячих данных\"",
   },
   {
     id: 2,
-    type: "4ГБ",
+    type: "Хранение архивных данных",
   },
   {
     id: 3,
-    type: "8ГБ",
+    type: "Видеонаблюдение",
   },
   {
     id: 4,
-    type: "16ГБ",
-  },
-  {
-    id: 5,
-    type: "1ТБ",
-  },
-  {
-    id: 6,
-    type: "2ТБ",
-  },
-  {
-    id: 7,
-    type: "без кеша",
-  },
-  {
-    id: 8,
-    type: "25U",
-  },
-  {
-    id: 9,
-    type: "42U",
-  },
-  {
-    id: 10,
-    type: "7U",
+    type: "Создание файлового сервера",
   },
 ];
 
 const height = [
   {
     id: 1,
-    type: "1U",
+    type: "Горизонтально-масштабируемая",
   },
   {
     id: 2,
-    type: "2U",
-  },
-  {
-    id: 3,
-    type: "3U",
-  },
-  {
-    id: 4,
-    type: "4U",
-  },
-  {
-    id: 5,
-    type: "5U",
-  },
-  {
-    id: 6,
-    type: "7U",
-  },
-  {
-    id: 7,
-    type: "8U",
-  },
-  {
-    id: 8,
-    type: "10U",
-  },
-  {
-    id: 9,
-    type: "25U",
-  },
-  {
-    id: 10,
-    type: "42U",
-  },
+    type: "Вертикально-масштабируемая",
+  }
 ];
 
 const volume = [
   {
     id: 1,
-    type: "40ТБ",
+    type: "На уровне контроллеров",
   },
   {
     id: 2,
-    type: "48ТБ",
-  },
-  {
-    id: 3,
-    type: "72ТБ",
-  },
-  {
-    id: 4,
-    type: "96ТБ",
-  },
-  {
-    id: 5,
-    type: "192ТБ",
-  },
-  {
-    id: 6,
-    type: "1ПБ",
-  },
-  {
-    id: 7,
-    type: "2ПБ",
-  },
-  {
-    id: 8,
-    type: "3ПБ",
-  },
-  {
-    id: 9,
-    type: "4ПБ",
-  },
+    type: "На уровне СХД",
+  }
 ];
 </script>
 
@@ -296,6 +264,8 @@ const volume = [
   margin: 0;
   font-weight: 400;
   padding: 0 20px;
+  margin-bottom: 10px;
+  line-height: 6rem;
 }
 
 .container {
@@ -339,7 +309,7 @@ const volume = [
   border: solid $black 1px;
   margin-right: 10px;
   margin-bottom: 10px;
-  width: 120px;
+  width: 300px;
   cursor: pointer;
 }
 
@@ -359,7 +329,7 @@ const volume = [
   font-size: $text-default;
   border: solid $black 1px;
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 12px 25px;
   font-weight: 400;
   margin-top: 30px;
 }
@@ -370,8 +340,7 @@ const volume = [
 }
 
 .imgContainer {
-  margin-bottom: auto;
-  margin-top: auto;
+  margin-top: 300px;
   padding-right: 200px;
 }
 
@@ -381,11 +350,11 @@ const volume = [
 }
 
 .iconRighter {
-  height: 80px;
+  height: 50px;
 }
 
 .iconLeft {
-  height: 70px;
+  height: 50px;
 }
 
 @media screen and (max-width: 1580px) {

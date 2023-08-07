@@ -26,6 +26,7 @@ const classes = computed(() => [$style.icon, props.border ? $style.border : unde
 </script>
 
 <style lang="scss" module>
+@import "scss/vars";
 .icon {
   height: 20px;
   width: 100px;
@@ -33,7 +34,7 @@ const classes = computed(() => [$style.icon, props.border ? $style.border : unde
 
 .border {
   & path {
-    stroke: black;
+    fill: $black;
   }
 }
 </style>

@@ -46,6 +46,8 @@ const whiteRoutes = [
   "/equipment/storage-systems",
   "/equipment/network-hardware",
   "/events",
+  "/news", // todo to grey
+  "/contacts"
 ];
 
 onMounted(() => {

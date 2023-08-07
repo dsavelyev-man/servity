@@ -45,8 +45,7 @@
           <li :class="`${$style.text} ${$style.listName}`">СОБЫТИЯ</li>
           <li :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/author-project" :class="`${$style.linkContent}`">
-              АВТОРИСКИЙ ПРОЕКТ <br />
-              ПРО БИЗНЕС
+              ТВ-проект
             </NuxtLink>
           </li>
           <li :class="`${$style.text} ${$style.listContent}`">
@@ -65,7 +64,7 @@
             <a href="tel:+74959020099" :class="$style.linkContent"> +7-495-902-00-99 </a>
           </li>
           <li :class="`${$style.text} ${$style.listContent}`">
-            <a href="mailto:office@servity.ru" :class="$style.linkContent"> OFFICE@SERVITY.RU </a>
+            <a href="mailto:office@servity.ru" :class="$style.linkContent"> INFO@SERVITY.RU </a>
           </li>
           <li :class="`${$style.text} ${$style.listContent}`">
             Г. МОСКВА, УЛ. ШАБОЛОВКА, Д.26, СТ. 12

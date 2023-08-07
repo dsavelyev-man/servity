@@ -4,8 +4,8 @@
           <NuxtLink v-for="item in news" :key="item.id" :to="item.to" :class="`${$style.container} ${$style.link}`">
             <img :src="item.image" :class="`${$style.image}`" />
             <div :class="`${$style.textContainer}`">
-              <p :class="`${$style.textDate} ${$style.text}`">{{ item.created_at }}</p>
               <p :class="`${$style.newsName} ${$style.text}`">{{ item.label }}</p>
+              <p :class="`${$style.textDate} ${$style.text}`">{{ item.created_at }}</p>
               <p :class="`${$style.newsDes} ${$style.text}`">{{ item.description }}</p>
             </div>
           </NuxtLink>
@@ -21,7 +21,7 @@ const news = [
     to: "/author-project",
     label: "Servity запускает авторский проект на телеканале Про Бизнесс",
     description:
-      "“IT сегодня” - Новая программа на телеканале Про Бизнесс. В гости к Аворам проекта приходят представители IT-индустрии и делятся своим экспертным мнением взглядом на проиходнящие изменения в отрасли, опытом внедрения цифровых проектов и обсуждают  перспективы развития отецественного технологического стека.",
+      "“IT сегодня” - Новая программа на телеканале Про Бизнесс. В гости к Авторам проекта приходят представители IT-индустрии и делятся своим экспертным мнением, взглядом на проиходнящие изменения в отрасли, опытом внедрения цифровых проектов и обсуждают  перспективы развития отечественного технологического стека.",
   },
 ];
 </script>
@@ -41,6 +41,7 @@ const news = [
 .textContainer {
   display: flex;
   flex-direction: column;
+  color: $black;
 }
 
 .text {
@@ -50,24 +51,21 @@ const news = [
 
 .container {
   display: flex;
-  align-items: flex-start;
   margin-top: 3rem;
 }
 
 .textDate {
-  color: $grey;
   font-size: $text-sm;
   font-weight: 500;
   margin-top: 20px;
 }
 
 .newsName {
-  color: white;
   font-size: $text-md;
+  margin: 0;
 }
 
 .newsDes {
-  color: white;
   font-size: $text-sm;
 }
 
