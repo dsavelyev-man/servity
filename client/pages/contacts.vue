@@ -41,7 +41,9 @@
           SMBE OÜ. Tartu mnt 67/1-13b 67/1-13b, 10115 Tallinn, Kesklinna linnaosa, Estonia
         </p>
       </div>
-      <Map />
+      <div :class="$style.map">
+        <Map />
+      </div>
       <!--      <img src="/images/mapTest.png" :class="`${$style.map}`" />-->
       <div :class="`${$style.support}`">
         <p :class="`${$style.pageTitle} ${$style.text}`">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</p>
@@ -85,6 +87,23 @@ const setShowPopup = () => {
 
 <style lang="scss" module>
 @import "scss/vars";
+
+.map {
+  height: 100%;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 100vh;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background-color: rgba(0, 0, 0, .03);
+
+  }
+}
 
 .links {
   display: flex;

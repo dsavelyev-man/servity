@@ -34,7 +34,7 @@ const news = [
 }
 
 .pageTitle {
-  color: white;
+  color: $black;
   font-size: $text-xl;
 }
 

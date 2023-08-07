@@ -46,35 +46,51 @@ const whiteRoutes = [
   "/equipment/storage-systems",
   "/equipment/network-hardware",
   "/events",
-  "/news", // todo to grey
+  "/news",
   "/contacts"
 ];
 
 onMounted(() => {
+  document.body.classList.remove("white");
+  document.body.classList.remove("grey");
+
   if (
-    //@ts-ignore
-    whiteRoutes.findIndex((url) => route.href === url) !== -1
+      //@ts-ignore
+      whiteRoutes.findIndex((url) => route.href === url) !== -1
   ) {
     blocks.value.dark = false;
 
-    document.body.classList.add("white");
+    //@ts-ignore
+    if(route.href === "/news") {
+      document.body.classList.add("grey");
+    } else {
+      document.body.classList.add("white");
+    }
     return;
   } else {
     document.body.classList.remove("white");
+    document.body.classList.remove("grey");
   }
 });
 
 watch(route, (next, prev) => {
+  document.body.classList.remove("white");
+  document.body.classList.remove("grey");
+
   if (
-    //@ts-ignore
-    whiteRoutes.findIndex((url) => next.href === url) !== -1
+      //@ts-ignore
+      whiteRoutes.findIndex((url) => next.href === url) !== -1
   ) {
     blocks.value.dark = false;
 
-    document.body.classList.add("white");
+    //@ts-ignore
+    if(next.href === "/news") {
+      document.body.classList.add("grey");
+    } else {
+      document.body.classList.add("white");
+    }
     return;
   } else {
-    document.body.classList.remove("white");
   }
 
   //@ts-ignore
