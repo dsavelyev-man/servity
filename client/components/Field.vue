@@ -12,6 +12,7 @@
   border: none;
   font-size: $text-default;
   border-bottom: 2px solid $black;
+  background: none;
   outline: none;
   padding: 10px 0;
   letter-spacing: $text-default-spacing;
