@@ -1,10 +1,15 @@
 <template>
   <form :class="$style.form">
-    <FieldLabel :class="$style.inputFileLabel">
-      ПРИКРЕПИТЬ ФАЙЛ
-      <input :class="$style.inputFile" type="file"/>
-      <span>ВЫБЕРИТЕ ФАЙЛ</span>
-    </FieldLabel>
+    <div>
+      <FieldLabel>
+        <TextArea placeholder="КОММЕНТАРИЙ"/>
+      </FieldLabel>
+      <FieldLabel :class="$style.inputFileLabel">
+        ИЛИ ПРИКРЕПИТЬ ФАЙЛ
+        <input :class="$style.inputFile" type="file"/>
+        <span>ВЫБЕРИТЕ ФАЙЛ</span>
+      </FieldLabel>
+    </div>
     <FieldLabel>
       ИМЯ И ФАМИЛИЯ
       <Field placeholder="ИМЯ И ФАМИЛИЯ"/>
@@ -31,6 +36,7 @@
 
 <script setup lang="ts">
 import ArrowIcon from "~/components/svg/ArrowIcon.vue";
+import TextArea from "~/components/pages/TextArea.vue";
 </script>
 
 <style lang="scss" module>
@@ -68,21 +74,21 @@ import ArrowIcon from "~/components/svg/ArrowIcon.vue";
 
 .inputFileLabel {
   position: relative;
-  justify-content: flex-start;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
 
   & span {
-    position: relative;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    border: none;
+    background-color: white;
+    border-radius: 10px;
     font-size: $text-default;
-    border-bottom: 2px solid $black;
-    color: rgba($black, 0.7);
-    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 25px;
+    font-weight: 400;
+    margin-top: 10px;
     letter-spacing: $text-default-spacing;
-    height: 44px;
-    padding: 0;
+    border: solid black 1px;
   }
 }
 
