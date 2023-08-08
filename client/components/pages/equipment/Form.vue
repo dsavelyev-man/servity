@@ -42,7 +42,7 @@ import TextArea from "~/components/pages/TextArea.vue";
 @import "scss/vars";
 
 .button {
-  background-color: white;
+  background: none;
   border-radius: 10px;
   font-size: $text-default;
   border: none;
@@ -78,7 +78,7 @@ import TextArea from "~/components/pages/TextArea.vue";
   margin-top: 10px;
 
   & span {
-    background-color: white;
+    background: none;
     border-radius: 10px;
     font-size: $text-default;
     border: none;
