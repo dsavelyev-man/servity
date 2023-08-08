@@ -5,7 +5,6 @@
         <TextArea placeholder="КОММЕНТАРИЙ"/>
       </FieldLabel>
       <FieldLabel :class="$style.inputFileLabel">
-        ИЛИ ПРИКРЕПИТЬ ФАЙЛ
         <input :class="$style.inputFile" type="file"/>
         <span>ВЫБЕРИТЕ ФАЙЛ</span>
       </FieldLabel>
