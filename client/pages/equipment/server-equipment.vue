@@ -2,7 +2,7 @@
   <div :class="$style.background">
     <Container :class="`${$style.container}`">
       <div :class="`${$style.mainContainer}`">
-        <div>
+        <div :class="$style.content">
           <div :class="`${$style.logoMobile}`">
               <Donut right second-hide third-hide/>
             <div :class="`${$style.logoFlex}`">
@@ -225,6 +225,11 @@ const height = [
 <style lang="scss" module>
 @import "scss/vars";
 
+.content {
+  padding: 0 20px;
+  max-width: 680px;
+}
+
 .link {
   margin: 0;
 }
@@ -234,7 +239,6 @@ const height = [
 }
 
 .types {
-  padding: 0 20px;
 }
 
 .buttonContainer {
@@ -260,7 +264,6 @@ const height = [
   color: $black;
   margin: 0;
   font-weight: 400;
-  padding: 0 20px;
   line-height: 6rem;
   margin-bottom: 10px;
 }
@@ -284,7 +287,6 @@ const height = [
 .textContainer {
   max-width: 660px;
   margin-bottom: 40px;
-  padding: 0 20px;
 }
 
 .background {
@@ -320,7 +322,6 @@ const height = [
 
 .textSpec {
   max-width: 650px;
-  padding: 0 20px;
 }
 
 .buttonForm {

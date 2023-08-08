@@ -69,6 +69,7 @@ import TextArea from "~/components/pages/TextArea.vue";
   flex-direction: column;
   gap: 40px;
   margin-top: 40px;
+  max-width: calc(100vw - 60px);
 }
 
 .inputFileLabel {

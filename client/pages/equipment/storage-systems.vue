@@ -2,7 +2,7 @@
   <div :class="$style.background">
     <Container :class="`${$style.container}`">
       <div :class="`${$style.mainContainer}`">
-        <div>
+        <div :class="$style.content">
           <div :class="`${$style.logoMobile}`">
               <Donut third-hide right/>
             <div :class="`${$style.logoFlex}`">
@@ -229,6 +229,11 @@ const volume = [
 <style lang="scss" module>
 @import "scss/vars";
 
+.content {
+  padding: 0 20px;
+  max-width: 680px;
+}
+
 .link {
   margin: 0;
 }
@@ -238,7 +243,6 @@ const volume = [
 }
 
 .types {
-  padding: 0 20px;
 }
 
 .buttonContainer {
@@ -264,7 +268,6 @@ const volume = [
   color: $black;
   margin: 0;
   font-weight: 400;
-  padding: 0 20px;
   margin-bottom: 10px;
   line-height: 6rem;
 }
@@ -289,7 +292,6 @@ const volume = [
 .textContainer {
   max-width: 660px;
   margin-bottom: 40px;
-  padding: 0 20px;
 }
 
 .textDescWhite {
@@ -321,7 +323,6 @@ const volume = [
 
 .textSpec {
   max-width: 650px;
-  padding: 0 20px;
 }
 
 .buttonForm {
