@@ -70,7 +70,7 @@
             </div>
           </div>
           <div :class="`${$style.textSpec}`">
-            <button :class="`${$style.buttonForm} ${$style.text}`">ОТПРАВИТЬ ЗАЯВКУ</button>
+            <Form/>
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
@@ -88,6 +88,7 @@ import ArrowLeftIcon from "~/components/svg/ArrowLeftIcon.vue";
 import ArrowRightIcon from "~/components/svg/ArrowRightIcon.vue";
 import styleCommon from "@/scss/modules/equipment.module.scss";
 import Donut from "~/components/svg/Donut.vue";
+import Form from "~/components/pages/equipment/Form.vue";
 
 const isGlobal = ref(false)
 const setGlobal = (global: boolean) => {
@@ -303,12 +304,11 @@ const height = [
   padding-bottom: 3px;
   font-size: $text-default;
   color: $black;
-  background-color: $white;
+  background: none;
   border-radius: 5px;
-  border: 1px solid white;
   margin-right: 10px;
   margin-bottom: 10px;
-  width: 300px;
+  width: 326px;
   cursor: pointer;
   border: solid $black 1px;
 }

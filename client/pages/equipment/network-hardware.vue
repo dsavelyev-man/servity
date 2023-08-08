@@ -69,7 +69,7 @@
             </div>
           </div>
           <div :class="`${$style.textSpec}`">
-            <button :class="`${$style.buttonForm} ${$style.text}`">ОТПРАВИТЬ ЗАЯВКУ</button>
+            <Form/>
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
@@ -86,6 +86,7 @@
 import styleCommon from "@/scss/modules/equipment.module.scss";
 import ArrowLeftIcon from "~/components/svg/ArrowLeftIcon.vue";
 import Donut from "~/components/svg/Donut.vue";
+import Form from "~/components/pages/equipment/Form.vue";
 
 const production = [
   {
@@ -265,12 +266,11 @@ const volume = [
   padding-bottom: 3px;
   font-size: $text-default;
   color: $black;
-  background-color: $white;
+  background: none;
   border-radius: 5px;
-  border: 1px solid white;
   margin-right: 10px;
   margin-bottom: 10px;
-  width: 300px;
+  width: 326px;
   cursor: pointer;
   border: solid $black 1px;
 }
@@ -287,18 +287,6 @@ const volume = [
 .textSpec {
   max-width: 650px;
   padding: 0 20px;
-}
-
-.buttonForm {
-  background-color: white;
-  border-radius: 10px;
-  font-size: $text-default;
-  border: none;
-  cursor: pointer;
-  padding: 12px 25px;
-  font-weight: 400;
-  margin-top: 30px;
-  border: solid black 1px;
 }
 
 .mainContainer {

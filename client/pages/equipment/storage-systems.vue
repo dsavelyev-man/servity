@@ -85,7 +85,7 @@
             </div>
           </div>
           <div :class="`${$style.textSpec}`">
-            <button :class="`${$style.buttonForm} ${$style.text}`">ОТПРАВИТЬ ЗАЯВКУ</button>
+            <Form/>
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
@@ -103,6 +103,7 @@ import ArrowLeftIcon from "~/components/svg/ArrowLeftIcon.vue";
 import ArrowRightIcon from "~/components/svg/ArrowRightIcon.vue";
 import Donut from "~/components/svg/Donut.vue";
 import styleCommon from "~/scss/modules/equipment.module.scss";
+import Form from "~/components/pages/equipment/Form.vue";
 
 const isGlobal = ref(false)
 const setGlobal = (global: boolean) => {
@@ -304,12 +305,12 @@ const volume = [
   padding-bottom: 3px;
   font-size: $text-default;
   color: $black;
-  background-color: $white;
+  background: none;
   border-radius: 5px;
   border: solid $black 1px;
   margin-right: 10px;
   margin-bottom: 10px;
-  width: 300px;
+  width: 328px;
   cursor: pointer;
 }
 
