@@ -29,10 +29,10 @@
             </div>
           </div>
           <div :class="$style.end">
-            <a :class="$style.link" href="/privacy">
+            <NuxtLink :class="$style.link" href="/privacy">
               ЛИЦЕНЗИИ И СЕРТИФИКАТЫ
               <ArrowIcon />
-            </a>
+            </NuxtLink>
           </div>
         </div>
       </Container>

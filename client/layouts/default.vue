@@ -47,7 +47,8 @@ const whiteRoutes = [
   "/equipment/network-hardware",
   "/events",
   "/news",
-  "/contacts"
+  "/contacts",
+  "/policy"
 ];
 
 onMounted(() => {
