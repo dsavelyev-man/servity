@@ -8,6 +8,11 @@
   & a {
     display: flex;
   }
+
+  &:first-child {
+    position: absolute;
+    left: -85px;
+  }
 }
 
 @media screen and (max-width: 767px) {

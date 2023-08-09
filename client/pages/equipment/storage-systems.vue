@@ -231,7 +231,7 @@ const volume = [
 
 .content {
   padding: 0 20px;
-  max-width: 680px;
+  max-width: 720px;
 }
 
 .link {
@@ -243,6 +243,10 @@ const volume = [
 }
 
 .types {
+}
+
+.donutLeft {
+  position: absolute;
 }
 
 .buttonContainer {
