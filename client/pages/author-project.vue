@@ -4,7 +4,7 @@
       <div :class="`${$style.container}`">
         <h2 :class="`${$style.text} ${$style.pageTitle}`">ТВ-ПРОЕКТ</h2>
         <h3 :class="`${$style.text} ${$style.textLightGrey}`">
-          IT СЕГОДНЯ – АВТОРСКИЙ ПРОЕКТ КОМПАНИИ SERVITY НА ТЕЛЕКАНАЛЕ ПРО БИЗНЕС
+          IT СЕГОДНЯ – ТВ-ПРОЕКТ КОМПАНИИ SERVITY НА ТЕЛЕКАНАЛЕ ПРО БИЗНЕС
         </h3>
         <p :class="`${$style.text} ${$style.textDarkGrey}`">
           Олег Белов, Директор по развитию SERVITY и герои программы обсуждают текущую повестку в
@@ -28,13 +28,13 @@
   <Container>
     <div :class="`${$style.secondContainer}`">
       <div :class="`${$style.videoContainer}`" v-for="item in items" :key="item.id">
-          <NuxtLink :to="item.link">
-            <div :class="`${$style.video}`" :style="`background-image: url(${item.video})`">
-                <div :class="`${$style.svgBackground}`">
-                    <img :class="`${$style.svg}`" src="/images/play.svg">
-                </div>
+        <NuxtLink :to="item.link">
+          <div :class="`${$style.video}`" :style="`background-image: url(${item.video})`">
+            <div :class="`${$style.svgBackground}`">
+              <img :class="`${$style.svg}`" src="/images/play.svg" />
             </div>
-          </NuxtLink>
+          </div>
+        </NuxtLink>
         <div :class="`${$style.textContainer}`">
           <p :class="`${$style.text} ${$style.textName}`">{{ item.name }}</p>
           <p :class="`${$style.text} ${$style.textJob}`">{{ item.job }}</p>
@@ -164,7 +164,6 @@ const items = [
   border-radius: 10px;
   z-index: 3;
 }
-
 
 .textJob {
   color: $grey;
