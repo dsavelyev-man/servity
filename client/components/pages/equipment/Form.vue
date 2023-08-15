@@ -2,7 +2,7 @@
   <form :class="$style.form">
     <div>
       <FieldLabel>
-        <TextArea placeholder="КОММЕНТАРИЙ"/>
+        <TextArea placeholder="ОПИШИТЕ ЗАДАЧУ"/>
       </FieldLabel>
       <FieldLabel :class="$style.inputFileLabel">
         <input :class="$style.inputFile" type="file"/>

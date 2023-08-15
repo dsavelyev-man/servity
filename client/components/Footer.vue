@@ -18,9 +18,9 @@
               ПАРТНЕРСКИЕ СТАТУСЫ
             </NuxtLink>
           </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          <!-- <li :class="`${$style.text} ${$style.listContent}`">
             <a href="/privacy" :class="`${$style.linkContent}`"> ЛИЦЕНЗИИ И СЕРТИФИКАТЫ </a>
-          </li>
+          </li> -->
           <li :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/#servity-in-faces" :class="`${$style.linkContent}`">
               SERVITY В ЛИЦАХ

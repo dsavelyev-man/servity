@@ -8,11 +8,11 @@ const menus = {
       to: "/#partner-statuses",
       label: "Партнерские статусы",
     },
-    {
-      to: "/privacy",
-      label: "Лицензии и сертификаты",
-      defaultLink: true,
-    },
+    // {
+    //   to: "/privacy",
+    //   label: "Лицензии и сертификаты",
+    //   defaultLink: true,
+    // },
     {
       to: "/#in-faces",
       label: "Servity в лицах",

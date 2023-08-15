@@ -3401,6 +3401,11 @@ joi@^17.7.0:
     "@sideway/formula" "^3.0.1"
     "@sideway/pinpoint" "^2.0.0"
 
+js-snip@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/js-snip/-/js-snip-1.2.0.tgz"
+  integrity sha512-zGBNAM0xTHPNWXxwQipjER1sAvHYaXy8aOOV1EuOEErhyB+gLv+j/OZbhUvaGG5sMoCK8CsHD0ZX3UpgKTk05g==
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -6222,6 +6227,13 @@ vue-router@^4.1.0, vue-router@^4.2.2:
   integrity sha512-cChBPPmAflgBGmy3tBsjeoe3f3VOSG6naKyY5pjtrqLGbNEXdzCigFUHgBvp9e3ysAtFtEx7OLqcSDh/1Cq2TQ==
   dependencies:
     "@vue/devtools-api" "^6.5.0"
+
+vue-snip@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/vue-snip/-/vue-snip-2.0.1.tgz"
+  integrity sha512-d4cH1Hq5behslipCQ3Bj0LRCiWhqS5pZsmx+98Xm+ZIxp/VwIbX4KE+/2v8Xc4c/GYQwGo7qvL0j8MOhE5Md7A==
+  dependencies:
+    js-snip "^1.2.0"
 
 "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, vue@^3.2.0, vue@^3.2.25, vue@^3.3.4, "vue@>=2.7 || >=3", vue@3.3.4:
   version "3.3.4"

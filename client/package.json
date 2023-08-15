@@ -17,6 +17,7 @@
         "@types/scroll-to-element": "^2.0.2",
         "sass": "^1.63.6",
         "scroll-to-element": "^2.0.3",
+        "vue-snip": "^2.0.1",
         "vue3-carousel": "^0.3.1",
         "vue3-perfect-scrollbar": "^1.6.1",
         "ymaps": "^0.2.1"

@@ -28,12 +28,12 @@
               </div>
             </div>
           </div>
-          <div :class="$style.end">
+          <!-- <div :class="$style.end">
             <NuxtLink :class="$style.link" href="/privacy">
               ЛИЦЕНЗИИ И СЕРТИФИКАТЫ
               <ArrowIcon />
             </NuxtLink>
-          </div>
+          </div> -->
         </div>
       </Container>
     </DynamicBackgroundContainer>

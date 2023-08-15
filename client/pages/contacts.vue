@@ -27,7 +27,7 @@
           <socials></socials>
         </div>
         <div>
-          <Button @click="setShowPopup" :class="`${$style.button} ${$style.text}`">
+          <Button @click="setShowPopup" :class="`${$style.button}`">
             КОНСУЛЬТАЦИЯ
           </Button>
         </div>
@@ -132,6 +132,7 @@ const setShowPopup = () => {
 
 .button {
   padding: 15px 25px;
+  letter-spacing: $text-default-spacing;
   margin-bottom: 40px;
 }
 
@@ -156,6 +157,8 @@ const setShowPopup = () => {
   color: $black;
   font-weight: 300;
   letter-spacing: $text-default-spacing;
+  margin: 0;
+  line-height: 2em;
 }
 
 .textGrey {
