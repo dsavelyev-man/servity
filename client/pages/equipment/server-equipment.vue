@@ -75,7 +75,7 @@
         </div>
         <div :class="`${$style.imgContainer}`">
           <div :class="`${$style.imgWrapper}`">
-            <img src="/images/equpment-img.png" />
+            <img src="/images/server_equipment.png" />
           </div>
         </div>
       </div>
@@ -236,6 +236,12 @@ const height = [
 
 .logo2 {
   padding-left: 150px;
+}
+
+.imgWrapper {
+  & img {
+    max-width: 500px;
+  }
 }
 
 .types {

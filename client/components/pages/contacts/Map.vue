@@ -21,16 +21,16 @@ let MARKERS = [
       link: "info@servity.ru",
     },
   },
-  {
-    lat: 59.903002,
-    lng: 30.398181,
-    address: {
-      underground: "м. Елизаровская",
-      street: "192019, Санкт-Петербург, ул. Седова, д.12, оф. 333",
-      tel: "+7 (812) 309-96-91",
-      link: "info@servity.ru",
-    },
-  },
+  // {
+  //   lat: 59.903002,
+  //   lng: 30.398181,
+  //   address: {
+  //     underground: "м. Елизаровская",
+  //     street: "192019, Санкт-Петербург, ул. Седова, д.12, оф. 333",
+  //     tel: "+7 (812) 309-96-91",
+  //     link: "info@servity.ru",
+  //   },
+  // },
 ];
 
 let map: any;

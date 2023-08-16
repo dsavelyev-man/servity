@@ -90,7 +90,7 @@
         </div>
         <div :class="`${$style.imgContainer}`">
           <div :class="`${$style.imgWrapper}`">
-            <img src="/images/equpment-img.png" />
+            <img src="/images/storage_systems.png" />
           </div>
         </div>
       </div>
@@ -232,6 +232,12 @@ const volume = [
 .content {
   padding: 0 20px;
   max-width: 720px;
+}
+
+.imgWrapper {
+  & img {
+    max-width: 500px;
+  }
 }
 
 .link {

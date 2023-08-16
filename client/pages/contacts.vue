@@ -158,7 +158,7 @@ const setShowPopup = () => {
   font-weight: 300;
   letter-spacing: $text-default-spacing;
   margin: 0;
-  line-height: 2em;
+  line-height: 1.4em;
 }
 
 .textGrey {

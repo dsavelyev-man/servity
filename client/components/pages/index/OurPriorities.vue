@@ -1,14 +1,21 @@
 <template>
   <Container :class="$style.outPriorities" id="block-priorities">
     <h1 :class="$style.heading">НАШИ ПРИОРИТЕТЫ</h1>
-    <div :class="$style.priorities" ref="scrollEl">
-      <div v-for="priority in priorities" :class="$style.priority">
-        <div :class="$style.wrapper">
-          <p v-html="priority.label" :class="$style.label"></p>
-          <div :class="$style.iconContainer">
-            <CheckIcon />
+    <div :class="$style.content">
+      <div :class="$style.prioritiesWrapper">
+        <div :class="$style.priorities" ref="scrollEl">
+          <div v-for="priority in priorities" :class="$style.priority">
+            <div :class="$style.wrapper">
+              <p v-html="priority.label" :class="$style.label"></p>
+              <div :class="$style.iconContainer">
+                <CheckIcon />
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div :class="$style.imageContainer">
+        <img :class="$style.image" src="/images/out_priorities.png"/>
       </div>
     </div>
   </Container>
@@ -42,11 +49,26 @@ const priorities = [
 <style lang="scss" module>
 @import "scss/vars";
 
+.content {
+  display: flex;
+}
+
+.image {
+  max-width: 410px;
+  max-height: 80vh;
+  border-radius: 32px;
+}
+
 .outPriorities {
   height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.prioritiesWrapper {
+  display: flex;
+  align-items: center;
 }
 
 .heading {
@@ -63,6 +85,7 @@ const priorities = [
 .priorities {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 200px;
   padding: 0 20px;
 }
 
@@ -81,7 +104,7 @@ const priorities = [
 
 .priority {
   position: relative;
-  padding: 48px;
+  padding: 24px;
 }
 
 .priority {
@@ -96,9 +119,11 @@ const priorities = [
       content: "";
       position: absolute;
       height: 1px;
-      width: calc(100% - 28px);
-      left: 0;
+      width: calc(100% - 56px);
+      left: 50%;
       bottom: 0;
+
+      transform: translateX(-50%);
     }
 
     &::before {
@@ -138,9 +163,11 @@ const priorities = [
       content: "";
       position: absolute;
       height: 1px;
-      width: calc(100% - 28px);
-      right: 0;
+      width: calc(100% - 56px);
+      left: 50%;
       bottom: 0;
+
+      transform: translateX(-50%);
     }
   }
 
@@ -167,6 +194,20 @@ const priorities = [
   }
 }
 
+@media screen and (max-width: 1324px) {
+  .imageContainer {
+    display: none;
+  }
+
+  .prioritiesWrapper {
+    justify-content: center;
+  }
+
+  .content {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .priorities {
     grid-template-columns: 1fr 1fr;
@@ -185,6 +226,8 @@ const priorities = [
         width: calc(100% - 28px);
         left: 0;
         bottom: 0;
+        
+        transform: translate(0);
       }
 
       &::before {
@@ -194,6 +237,7 @@ const priorities = [
         height: calc(100% - 28px);
         right: 0;
         top: 0;
+        
       }
     }
 
@@ -202,9 +246,12 @@ const priorities = [
         content: "";
         position: absolute;
         height: 1px;
-        width: calc(100% - 56px);
+        width: calc(100% - 28px);
         right: 0;
+        left: auto;
         bottom: 0;
+
+        transform: translate(0);
       }
 
       &::before {
@@ -220,6 +267,9 @@ const priorities = [
         width: calc(100% - 28px);
         left: 0;
         bottom: 0;
+
+        transform: translate(0);
+
       }
 
       &::before {

@@ -35,6 +35,7 @@ import DonutLogo from "~/components/logo/DonutLogo.vue";
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
+  padding-left: 22rem;
 }
 
 .description {
@@ -53,6 +54,12 @@ import DonutLogo from "~/components/logo/DonutLogo.vue";
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (max-height: 800px) {
+  .heroBlock {
+    padding-top: $navbar-height;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -91,6 +98,10 @@ import DonutLogo from "~/components/logo/DonutLogo.vue";
 @media screen and (max-width: 1440px) {
   .heroBlock {
     padding: 0 20px;
+  }
+
+  .content {
+    padding-left: 0;
   }
 }
 </style>

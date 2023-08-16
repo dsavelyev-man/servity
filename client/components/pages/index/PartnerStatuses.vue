@@ -221,7 +221,8 @@ const computedItems = computed(() => {
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
-  gap: 10rem;
+  gap: 9rem;
+  max-width: 1360px;
   row-gap: 4rem;
 }
 

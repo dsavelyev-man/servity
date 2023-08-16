@@ -5,5 +5,11 @@ export default defineNuxtConfig({
     host: "0.0.0.0",
   },
 
+  app: {
+    head: {
+      script: [{ src: "/yandex.js" }],
+    },
+  },
+
   spaLoadingTemplate: `./components/Loading.vue`,
 });

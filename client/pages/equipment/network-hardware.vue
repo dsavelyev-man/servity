@@ -74,7 +74,7 @@
         </div>
         <div :class="`${$style.imgContainer}`">
           <div :class="`${$style.imgWrapper}`">
-            <img src="/images/equpment-img.png" />
+            <img src="/images/network_hardware.png" />
           </div>
         </div>
       </div>
@@ -206,6 +206,12 @@ const volume = [
 }
 
 .types {
+}
+
+.imgWrapper {
+  & img {
+    max-width: 500px;
+  }
 }
 
 .buttonContainer {

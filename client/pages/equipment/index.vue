@@ -36,12 +36,23 @@
   justify-content: space-between;
   align-items: center;
   height: 100vh;
+  padding-left: 22rem;
   transform: translateY(-$navbar-height - 82px);
+}
+
+@media screen and (max-height: 800px) {
+  .heroBlock {
+    padding-top: $navbar-height;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .logo {
     display: none;
+  }
+
+  .content {
+    padding-left: 0;
   }
 
   .links {
