@@ -646,6 +646,7 @@ onMounted(() => {
 
 .header {
     font-size: 7rem;
+    padding: 0 40px;
     color: $black;
 }
 
@@ -656,12 +657,13 @@ onMounted(() => {
 
 .textLg {
     color: $black;
+    padding: 0 40px;
     font-size: 4rem;
-    margin-left: 28px;
     margin-bottom: 25px;
 }
 
 .textSm {
+    padding: 0 40px;
     font-size: $text-default;
 }
 
@@ -676,21 +678,15 @@ onMounted(() => {
 
 .containerGrid {
     display: grid;
+    padding: 0 40px;
     grid-template-rows: repeat(4, 144px);
-}
-
-@media screen and (max-width: 1440px) {
-    .text {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
 }
 
 @media screen and (max-width: 768px){
     .containerGrid {
         grid-template-rows: none;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
     .itemGrid {
         grid-template-columns: 160px 2px 8fr;

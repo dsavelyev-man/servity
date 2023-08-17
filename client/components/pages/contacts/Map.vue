@@ -12,11 +12,11 @@ import ymaps from "ymaps";
 
 let MARKERS = [
   {
-    lat: 55.723952,
-    lng: 37.701709,
+    lat: 55.72093963967376,
+    lng: 37.60878151400288,
     address: {
       underground: "м. Волгоградский проспект",
-      street: "109316, Москва, Остаповский пр-д, д. 3, стр. 23",
+      street: "119049, Москва, ул. Шаболовка, 26, стр. 13",
       tel: "+7 (495) 902-00-99",
       link: "info@servity.ru",
     },
@@ -101,8 +101,11 @@ onMounted(async () => {
 </script>
 
 <style lang="scss">
+@import "scss/vars";
+
 .map {
   position: relative;
+  border: 6px solid rgba($light-grey, 0.1);
 
   &__zoom-in,
   &__zoom-out {
@@ -124,7 +127,7 @@ onMounted(async () => {
 
   &__wrap {
     min-height: 60rem;
-    max-width: calc(100% - 20px);
+    max-width: calc(100%);
 
     .ymaps-2-1-68-image {
     }

@@ -1,14 +1,16 @@
 <template>
   <Container :class="$style.outPriorities" id="block-priorities">
-    <h1 :class="$style.heading">НАШИ ПРИОРИТЕТЫ</h1>
     <div :class="$style.content">
-      <div :class="$style.prioritiesWrapper">
-        <div :class="$style.priorities" ref="scrollEl">
-          <div v-for="priority in priorities" :class="$style.priority">
-            <div :class="$style.wrapper">
-              <p v-html="priority.label" :class="$style.label"></p>
-              <div :class="$style.iconContainer">
-                <CheckIcon />
+      <div :class="$style.textContent">
+        <h1 :class="$style.heading">НАШИ ПРИОРИТЕТЫ</h1>
+        <div :class="$style.prioritiesWrapper">
+          <div :class="$style.priorities" ref="scrollEl">
+            <div v-for="priority in priorities" :class="$style.priority">
+              <div :class="$style.wrapper">
+                <p v-html="priority.label" :class="$style.label"></p>
+                <div :class="$style.iconContainer">
+                  <CheckIcon />
+                </div>
               </div>
             </div>
           </div>
@@ -51,12 +53,19 @@ const priorities = [
 
 .content {
   display: flex;
+  gap: 8rem;
 }
 
 .image {
-  max-width: 410px;
+  max-width: 480px;
   max-height: 80vh;
   border-radius: 32px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .outPriorities {
@@ -79,14 +88,14 @@ const priorities = [
   margin-top: 0;
   margin-bottom: 48px;
   font-size: $text-xl;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .priorities {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 200px 200px;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .label {
@@ -115,15 +124,16 @@ const priorities = [
   }
 
   &:nth-child(1) {
+    padding-left: 0;
+
     &::after {
       content: "";
       position: absolute;
       height: 1px;
-      width: calc(100% - 56px);
-      left: 50%;
+      width: calc(100% - 28px);
+      left: 0;
       bottom: 0;
 
-      transform: translateX(-50%);
     }
 
     &::before {
@@ -159,19 +169,22 @@ const priorities = [
   }
 
   &:nth-child(3) {
+    padding-right: 0;
+
     &::after {
       content: "";
       position: absolute;
       height: 1px;
-      width: calc(100% - 56px);
-      left: 50%;
+      width: calc(100% - 28px);
+      right: 0;
       bottom: 0;
 
-      transform: translateX(-50%);
     }
   }
 
   &:nth-child(4) {
+    padding-left: 0;
+
     &::before {
       content: "";
       position: absolute;
@@ -191,6 +204,10 @@ const priorities = [
       right: 0;
       bottom: 0;
     }
+  }
+
+  &:nth-child(6) {
+    padding-right: 0;
   }
 }
 

@@ -4,10 +4,11 @@
       <div :class="`${$style.mainContainer}`">
         <div :class="$style.content">
           <div :class="`${$style.logoMobile}`">
+            <div/>
             <NuxtLink to="/equipment/server-equipment" :class="`${$style.link}`">
-              <ArrowLeftIcon border />
-            </NuxtLink>
               <Donut :class="`${$style.logoMobileMini}`" />
+            </NuxtLink>
+
           </div>
           <div :class="`${$style.titleContainer}`">
             <div :class="styleCommon.iconContainer">
@@ -29,8 +30,7 @@
               которая будет соответствовать их бизнес-потребностям.
             </p>
             <p :class="`${$style.text} ${$style.textDescWhite}`">
-              Для получения индивидуального коммерческого предложения, заполните необходимые
-              параметры конфигуратора и отправьте нам запрос.
+              ДЛЯ ПОЛУЧЕНИЯ ИНДИВИДУАЛЬНОГО КОММЕРЧЕСКОГО ПРЕДЛОЖЕНИЯ, ЗАПОЛНИТЕ НЕОБХОДИМЫЕ ПАРАМЕТРЫ КОНФИГУРАТОРА И ОТПРАВЬТЕ НАМ ЗАПРОС.
             </p>
           </div>
           <div :class="`${$style.types}`">
@@ -73,7 +73,7 @@
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
-          <div :class="`${$style.imgWrapper}`">
+          <div :class="`${$style.imgWrapper} ${styleCommon.imgWrapper}`">
             <img src="/images/network_hardware.png" />
           </div>
         </div>
@@ -229,15 +229,14 @@ const volume = [
   display: flex;
   align-items: center;
   margin-top: 100px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .pageName {
-  font-size: $text-xl;
+  font-size: $text-miniXl;
   color: black;
   margin: 0;
   font-weight: 400;
-  padding: 0 20px;
   line-height: 6rem;
   margin-bottom: 10px;
 }
@@ -303,7 +302,6 @@ const volume = [
 
 .imgContainer {
   margin-top: 300px;
-  padding-right: 200px;
 }
 
 .logoMobile {
@@ -326,7 +324,7 @@ const volume = [
   .logoMobile {
     display: flex;
     margin-top: 100px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
 

@@ -12,12 +12,13 @@
     font-size: $text-default;
     color: darken($grey, 100);
     margin-bottom: 15px;
+    padding: 0 40px;
 }
 
-@media screen and (max-width: 1440px) {
-    .text {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
+//@media screen and (max-width: 1440px) {
+//    .text {
+//        padding-left: 20px;
+//        padding-right: 20px;
+//    }
+//}
 </style>

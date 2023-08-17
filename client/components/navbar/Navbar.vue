@@ -17,7 +17,7 @@
         </li>
       </ul>
       <NuxtLink to="/equipment">
-        <Button :class="[$style.configuratorButton, $style.button]"> КОНФИГУРАТОР </Button>
+        <Button :class="[$style.configuratorButton, $style.button]"> ПОЛУЧИТЬ КП </Button>
       </NuxtLink>
       <Button :class="[$style.button, $style.consultationButton]" @click="setShowPopup">
         КОНСУЛЬТАЦИЯ
@@ -140,7 +140,7 @@ const $style = useCssModule();
 .phone {
   font-size: $text-default;
   text-decoration: none;
-  margin-left: 2rem;
+  margin-left: 10rem;
   transition: $transition;
 }
 

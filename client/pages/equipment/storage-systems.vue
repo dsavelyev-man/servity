@@ -4,15 +4,18 @@
       <div :class="`${$style.mainContainer}`">
         <div :class="$style.content">
           <div :class="`${$style.logoMobile}`">
+            <NuxtLink to="/equipment/server-equipment">
               <Donut third-hide right/>
+            </NuxtLink>
             <div :class="`${$style.logoFlex}`">
-              <NuxtLink to="/equipment">
-                <ArrowLeftIcon border/>
-              </NuxtLink>
-                <Donut first-hide second-hide :class="`${$style.iconRight}`"/>
-              <NuxtLink to="/equipment/server-equipment">
-                <ArrowRightIcon border/>
-              </NuxtLink>
+<!--              <NuxtLink to="/equipment">-->
+<!--&lt;!&ndash;                <ArrowLeftIcon border/>&ndash;&gt;-->
+<!--              </NuxtLink>-->
+              <Donut first-hide second-hide :class="`${$style.iconRight}`"/>
+
+
+<!--                <ArrowRightIcon border/>-->
+
             </div>
           </div>
           <div :class="`${$style.titleContainer}`">
@@ -37,8 +40,7 @@
               Средний срок поставки от 10-12 недель.
             </p>
             <p :class="`${$style.text} ${$style.textDescWhite}`">
-              Для получения индивидуального коммерческого предложения, заполните необходимые
-              параметры конфигуратора и отправьте нам запрос.
+              ДЛЯ ПОЛУЧЕНИЯ ИНДИВИДУАЛЬНОГО КОММЕРЧЕСКОГО ПРЕДЛОЖЕНИЯ, ЗАПОЛНИТЕ НЕОБХОДИМЫЕ ПАРАМЕТРЫ КОНФИГУРАТОРА И ОТПРАВЬТЕ НАМ ЗАПРОС.
             </p>
           </div>
           <div :class="`${$style.types}`">
@@ -89,7 +91,7 @@
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
-          <div :class="`${$style.imgWrapper}`">
+          <div :class="`${$style.imgWrapper} ${styleCommon.imgWrapper}`">
             <img src="/images/storage_systems.png" />
           </div>
         </div>
@@ -269,12 +271,12 @@ const volume = [
 .titleContainer {
   display: flex;
   margin-top: 100px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
   align-items: center;
 }
 
 .pageName {
-  font-size: $text-xl;
+  font-size: $text-miniXl;
   color: $black;
   margin: 0;
   font-weight: 400;
@@ -353,7 +355,6 @@ const volume = [
 
 .imgContainer {
   margin-top: 300px;
-  padding-right: 200px;
 }
 
 .logoMobile {
@@ -381,10 +382,6 @@ const volume = [
     display: none;
   }
 
-  .iconRight {
-    transform: rotate(180deg);
-  }
-
   .iconRighter {
     display: none;
   }
@@ -399,7 +396,7 @@ const volume = [
 
   .logoMobile {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .titleContainer {

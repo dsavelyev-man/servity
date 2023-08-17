@@ -14,7 +14,7 @@
   border-bottom: 2px solid $black;
   background: none;
   outline: none;
-  max-width: 650px;
+  max-width: 100%;
   width: 100%;
   padding: 10px 0;
   letter-spacing: $text-default-spacing;

@@ -1,6 +1,6 @@
 <template>
     <div :to="props.item.to" :class="`${$style.container} ${$style.link}`">
-            <img :src="props.item.image" :class="`${$style.image}`" />
+            <div :style="`background-image: url(${props.item.image})`" :class="`${$style.image}`" />
             <div :class="`${$style.textContainer}`">
               <p :class="`${$style.newsName} ${$style.text}`">{{ props.item.label }}</p>
               <p :class="`${$style.textDate} ${$style.text}`">{{ props.item.created_at }}</p>
@@ -98,8 +98,10 @@ const setShowMore = () => {
 .image {
   border-radius: 10px;
   margin-right: 15px;
-  max-width: 324px;
-  width: 100%;
+  min-width: 324px;
+  height: 232px;
+  background-position: center;
+  background-size: cover;
 }
 
 @media screen and (max-width: 1024px) {

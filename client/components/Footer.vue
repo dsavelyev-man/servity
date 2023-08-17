@@ -6,71 +6,72 @@
         <socials :class="`${$style.socialMobile}`" />
       </div>
       <div :class="`${$style.mainFLexMobile}`">
-        <ul :class="`${$style.List}`">
+        <div :class="`${$style.List}`">
           <NuxtLink to="/#about" :class="`${$style.linkContent}`">
-            <li :class="`${$style.text} ${$style.listName}`">КОМПАНИЯ</li>
+            <div :class="`${$style.text} ${$style.listName}`">КОМПАНИЯ</div>
           </NuxtLink>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/#history" :class="`${$style.linkContent}`"> ИСТОРИЯ </NuxtLink>
-          </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/#partner-statuses" :class="`${$style.linkContent}`">
-              ПАРТНЕРСКИЕ СТАТУСЫ
+              ВЕНДОРЫ
             </NuxtLink>
-          </li>
-          <!-- <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+          <!-- <div :class="`${$style.text} ${$style.listContent}`">
             <a href="/privacy" :class="`${$style.linkContent}`"> ЛИЦЕНЗИИ И СЕРТИФИКАТЫ </a>
-          </li> -->
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div> -->
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/#servity-in-faces" :class="`${$style.linkContent}`">
               SERVITY В ЛИЦАХ
             </NuxtLink>
-          </li>
-        </ul>
-        <ul :class="`${$style.List}`">
-          <li :class="`${$style.text} ${$style.listName}`">КОМПЕТЕНЦИИ</li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+        </div>
+        <div :class="`${$style.List}`">
+          <div :class="`${$style.text} ${$style.listName}`">КОМПЕТЕНЦИИ</div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/equipment" :class="`${$style.linkContent}`"> ОБОРУДОВАНИЕ </NuxtLink>
-          </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/projects" :class="`${$style.linkContent}`"> ПРОЕКТЫ </NuxtLink>
-          </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/" :class="`${$style.linkContent}`"> ГАРАНТИИ </NuxtLink>
-          </li>
-        </ul>
-      </div>
-      <div :class="`${$style.mainFLexMobile}`">
-        <ul :class="`${$style.List}`">
-          <li :class="`${$style.text} ${$style.listName}`">СОБЫТИЯ</li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+        </div>
+        <div :class="`${$style.List}`">
+          <div :class="`${$style.text} ${$style.listName}`">СОБЫТИЯ</div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/author-project" :class="`${$style.linkContent}`">
               ТВ-ПРОЕКТ
             </NuxtLink>
-          </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/events" :class="`${$style.linkContent}`"> МЕРОПРИЯТИЯ </NuxtLink>
-          </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/news" :class="`${$style.linkContent}`"> НОВОСТИ </NuxtLink>
-          </li>
-        </ul>
-        <ul :class="`${$style.List}`">
-          <li :class="`${$style.text} ${$style.listName}`">КОНТАКТЫ</li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+        </div>
+        <div :class="`${$style.List}`">
+          <div :class="`${$style.text} ${$style.listName}`">КОНТАКТЫ</div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <NuxtLink to="/contacts" :class="`${$style.linkContent}`"> ВСЕ КОНТАКТЫ </NuxtLink>
-          </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <a href="tel:+74959020099" :class="$style.linkContent"> +7-495-902-00-99 </a>
-          </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
+          </div>
+          <div :class="`${$style.text} ${$style.listContent}`">
             <a href="mailto:office@servity.ru" :class="$style.linkContent"> INFO@SERVITY.RU </a>
-          </li>
-          <li :class="`${$style.text} ${$style.listContent}`">
-            Г. МОСКВА, УЛ. ШАБОЛОВКА, Д.26, СТ. 12
-          </li>
-        </ul>
+          </div>
+          <div :class="`${$style.text} ${$style.listContent}`">
+            Г. МОСКВА, УЛ. ШАБОЛОВКА, Д.26, СТР. 12
+          </div>
+        </div>
       </div>
+<!--      <div :class="`${$style.mainFLexMobile}`">-->
+<!--        -->
+<!--      </div>-->
       <socials :class="`${$style.socialPc}`" :dakr="blocks.dark" />
     </div>
     <hr :class="`${$style.row}`" />
@@ -107,6 +108,10 @@ const classes = computed(() => [$style.container, !blocks?.value.dark ? $style.w
   margin-top: 210px;
 
   &.white {
+    & .listName {
+      color: $black
+    }
+
     & a {
       color: $black;
     }
@@ -147,7 +152,9 @@ const classes = computed(() => [$style.container, !blocks?.value.dark ? $style.w
 }
 
 .mainFLexMobile {
-  display: flex;
+  display: grid;
+  gap: 80px;
+  grid-template-columns: auto auto auto auto;
 }
 
 .social {
@@ -162,6 +169,7 @@ const classes = computed(() => [$style.container, !blocks?.value.dark ? $style.w
 
 .List {
   list-style-type: none;
+  margin-top: 0;
 }
 
 .text {
@@ -194,10 +202,15 @@ const classes = computed(() => [$style.container, !blocks?.value.dark ? $style.w
   text-decoration: none;
 }
 
+@media screen and (max-width: 1328px) {
+  .mainFLexMobile {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .List {
-    grid-row-start: 3;
-    grid-row-end: 1;
     padding: 0 40px 0 0;
   }
 
@@ -214,13 +227,9 @@ const classes = computed(() => [$style.container, !blocks?.value.dark ? $style.w
   }
 
   .mainFLexMobile {
-    //display: flex;
-    //flex-direction: row-reverse;
-    //justify-content: space-between;
     margin-top: 30px;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
   }
 
   .socialMobile {

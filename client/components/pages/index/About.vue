@@ -122,20 +122,20 @@ const aboutCounters = [
   letter-spacing: $text-default-spacing;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1324px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 20px;
+    padding: 0 40px;
   }
 
   .description {
-    padding: 0 20px;
+    padding: 0 40px;
   }
 
   .counters {
     grid-template-columns: 1fr 1fr;
-    padding: 0 20px;
+    padding: 0 40px;
     grid-gap: 20px;
   }
 }

@@ -91,18 +91,6 @@ const setShowPopup = () => {
 .map {
   height: 100%;
   position: relative;
-
-  &:before {
-    content: "";
-    width: 100vh;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    background-color: rgba(0, 0, 0, .03);
-
-  }
 }
 
 .links {

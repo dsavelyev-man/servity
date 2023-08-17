@@ -4,14 +4,15 @@
       <div :class="`${$style.mainContainer}`">
         <div :class="$style.content">
           <div :class="`${$style.logoMobile}`">
-              <Donut right second-hide third-hide/>
             <div :class="`${$style.logoFlex}`">
-              <NuxtLink to="/equipment/storage-systems">
-                <ArrowLeftIcon border/>
-              </NuxtLink>
-                <Donut first-hide :class="`${$style.iconRight}`"/>
               <NuxtLink to="/equipment/network-hardware">
-                <ArrowRightIcon border/>
+                <Donut right second-hide third-hide/>
+<!--                <ArrowLeftIcon border/>-->
+              </NuxtLink>
+
+              <NuxtLink to="/equipment/storage-systems">
+                <Donut first-hide :class="`${$style.iconRight}`"/>
+<!--                <ArrowRightIcon border/>-->
               </NuxtLink>
             </div>
           </div>
@@ -38,8 +39,7 @@
               недель.
             </p>
             <p :class="`${$style.text} ${$style.textDescWhite}`">
-              Для получения индивидуального коммерческого предложения, заполните необходимые
-              параметры конфигуратора и отправьте нам запрос.
+              ДЛЯ ПОЛУЧЕНИЯ ИНДИВИДУАЛЬНОГО КОММЕРЧЕСКОГО ПРЕДЛОЖЕНИЯ, ЗАПОЛНИТЕ НЕОБХОДИМЫЕ ПАРАМЕТРЫ КОНФИГУРАТОРА И ОТПРАВЬТЕ НАМ ЗАПРОС.
             </p>
           </div>
           <div :class="`${$style.types}`">
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div :class="`${$style.imgContainer}`">
-          <div :class="`${$style.imgWrapper}`">
+          <div :class="`${$style.imgWrapper} ${styleCommon.imgWrapper}`">
             <img src="/images/server_equipment.png" />
           </div>
         </div>
@@ -262,11 +262,11 @@ const height = [
   display: flex;
   align-items: center;
   margin-top: 100px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .pageName {
-  font-size: $text-xl;
+  font-size: $text-miniXl;
   color: $black;
   margin: 0;
   font-weight: 400;
@@ -353,7 +353,6 @@ const height = [
 
 .imgContainer {
   margin-top: 300px;
-  padding-right: 200px;
 }
 
 .icon {
@@ -403,8 +402,9 @@ const height = [
   }
 
   .logoFlex {
+    width: 100%;
+    justify-content: space-between;
     display: flex;
-    align-items: center;
   }
 }
 </style>

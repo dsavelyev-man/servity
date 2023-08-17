@@ -97,7 +97,7 @@ import DonutLogo from "~/components/logo/DonutLogo.vue";
 
 @media screen and (max-width: 1440px) {
   .heroBlock {
-    padding: 0 20px;
+    padding: 0 40px;
   }
 
   .content {

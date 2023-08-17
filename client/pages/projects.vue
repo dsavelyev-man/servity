@@ -1,6 +1,6 @@
 <template>
   <Container :class="`${$style.page}`">
-    <h2 :class="`${$style.pageTitle} ${$style.text}`">Проекты</h2>
+    <h2 :class="`${$style.pageTitle} ${$style.text}`">ПРОЕКТЫ</h2>
     <div :class="`${$style.containerLinks}`">
       <div v-for="item in links" :key="item.id" :class="`${$style.blockLinks}`">
         <NuxtLink

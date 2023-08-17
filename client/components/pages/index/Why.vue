@@ -87,7 +87,7 @@ const items = [
 .container {
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .itemHeading {

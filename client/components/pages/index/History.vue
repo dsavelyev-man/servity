@@ -105,6 +105,7 @@ const items = [
   height: 100vh;
   display: flex;
   align-items: center;
+  padding: 0 40px;
   align-content: center;
 }
 
@@ -128,7 +129,7 @@ const items = [
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   height: 380px;
-  margin-left: calc((100vw - 1440px) / 2);
+  margin-left: calc(((100vw - 1440px) / 2) + 80px);
 }
 
 .itemsScroll {
@@ -136,7 +137,7 @@ const items = [
   max-width: calc(100vw);
   margin-top: 7rem;
   position: absolute;
-  left: calc(((100vw - 1440px) / 2) * -1);
+  left: calc(((100vw - 1440px + 80px) / 2) * -1);
   bottom: 0;
 
   &::-webkit-scrollbar {
@@ -185,10 +186,6 @@ const items = [
 }
 
 @media screen and (max-width: 1440px) {
-  .history {
-    padding: 0 20px;
-  }
-
   .itemsScroll {
     left: 0;
   }

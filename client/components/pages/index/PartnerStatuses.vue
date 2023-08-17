@@ -3,28 +3,32 @@
     <DynamicBackgroundContainer :class="$style.wrapper" id="block-partner-statuses">
       <Container :class="$style.container">
         <div :class="$style.content">
-          <h1 :class="$style.heading">ПАРТНЕРСКИЕ СТАТУСЫ</h1>
+          <h1 :class="$style.heading">ВЕНДОРЫ</h1>
           <div>
             <h2 :class="$style.title">ИНОСТРАННОЕ ПРОИЗВОДСТВО, ПАРАЛЛЕЛЬНЫЙ ИМПОРТ</h2>
             <hr :class="$style.divider" />
-            <div :class="$style.statuses">
-              <!--              <div v-for="block in computedItems.global" :class="$style.block">-->
-              <!--                -->
-              <!--              </div>-->
-              <div v-for="item in items.global" :class="$style.status">
-                <img :src="`/images/${item.img}`" :alt="item.img" />
+            <div :class="$style.statusesWrapperContent">
+              <div :class="$style.statuses">
+                <!--              <div v-for="block in computedItems.global" :class="$style.block">-->
+                <!--                -->
+                <!--              </div>-->
+                <div v-for="item in items.global" :class="$style.status">
+                  <img :src="`/images/${item.img}`" :alt="item.img" />
+                </div>
               </div>
             </div>
           </div>
           <div :class="$style.statusesWrapper">
-            <h2 :class="$style.title">ПРОИЗВОДСТВО РОССИЙСКАЯ ФЕДЕРАЦИЯ, РЕЕСТР МИНПРОМТОРГА</h2>
+            <h2 :class="$style.title">ПРОИЗВОДСТВО РОССИЙСКАЯ ФЕДЕРАЦИЯ</h2>
             <hr :class="$style.divider" />
-            <div :class="$style.statuses">
-              <!--              <div v-for="block in computedItems.global" :class="$style.block">-->
-              <!--                -->
-              <!--              </div>-->
-              <div v-for="item in items.russian" :class="$style.status">
-                <img :src="`/images/${item.img}`" :alt="item.img" />
+            <div :class="$style.statusesWrapperContent">
+              <div :class="$style.statuses">
+                <!--              <div v-for="block in computedItems.global" :class="$style.block">-->
+                <!--                -->
+                <!--              </div>-->
+                <div v-for="item in items.russian" :class="$style.status">
+                  <img :src="`/images/${item.img}`" :alt="item.img" />
+                </div>
               </div>
             </div>
           </div>
@@ -96,9 +100,9 @@ const items = {
     {
       img: "russian_status_6.png",
     },
-    {
-      img: "russian_status_7.png",
-    },
+    // {
+    //   img: "russian_status_7.png",
+    // },
     {
       img: "russian_status_8.png",
     },
@@ -142,6 +146,12 @@ const computedItems = computed(() => {
 
 <style lang="scss" module>
 @import "scss/vars";
+
+.statusesWrapperContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .link {
   color: $black;
@@ -217,12 +227,12 @@ const computedItems = computed(() => {
 }
 
 .statuses {
-  display: flex;
+  display: grid;
+  grid-template-columns: 90px 90px 90px 90px 90px;
   flex-wrap: wrap;
-  width: 100%;
   justify-content: space-between;
   gap: 9rem;
-  max-width: 1360px;
+  //max-width: 1360px;
   row-gap: 4rem;
 }
 
@@ -233,7 +243,7 @@ const computedItems = computed(() => {
 
   & img {
     max-height: 50px;
-    max-width: 240px;
+    max-width: 90px;
   }
 }
 
@@ -255,12 +265,6 @@ const computedItems = computed(() => {
 
   .status {
     margin-right: 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .statuses {
-    grid-template-columns: 1fr;
   }
 }
 </style>

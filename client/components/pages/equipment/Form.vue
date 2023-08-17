@@ -6,24 +6,24 @@
       </FieldLabel>
       <FieldLabel :class="$style.inputFileLabel">
         <input :class="$style.inputFile" type="file"/>
-        <span>ВЫБЕРИТЕ ФАЙЛ</span>
+        <span>ДОБАВИТЬ СПЕЦИФИКАЦИЮ</span>
       </FieldLabel>
     </div>
     <FieldLabel>
       ИМЯ И ФАМИЛИЯ
-      <Field placeholder="ИМЯ И ФАМИЛИЯ"/>
+      <Field/>
     </FieldLabel>
     <FieldLabel>
       ТЕЛЕФОН
-      <Field type="phone" placeholder="+7"/>
+      <Field type="phone"/>
     </FieldLabel>
     <FieldLabel>
-      ПОЧТА
-      <Field placeholder="E-MAIL"/>
+      E-MAIL
+      <Field/>
     </FieldLabel>
     <FieldLabel>
       КОМПАНИЯ
-      <Field placeholder="КОМПАНИЯ"/>
+      <Field/>
     </FieldLabel>
     <button :class="`${$style.button} ${$style.text}`">ОТПРАВИТЬ ЗАЯВКУ</button>
     <NuxtLink :class="$style.link" href="/policy">
@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import ArrowIcon from "~/components/svg/ArrowIcon.vue";
-import TextArea from "~/components/pages/TextArea.vue";
+import TextArea from "~/components/TextArea.vue";
 </script>
 
 <style lang="scss" module>

@@ -6,7 +6,7 @@ const menus = {
     },
     {
       to: "/#partner-statuses",
-      label: "Партнерские статусы",
+      label: "Вендоры",
     },
     // {
     //   to: "/privacy",
@@ -15,7 +15,7 @@ const menus = {
     // },
     {
       to: "/#in-faces",
-      label: "Servity в лицах",
+      label: "SERVITY в лицах",
     },
   ],
   competencies: [

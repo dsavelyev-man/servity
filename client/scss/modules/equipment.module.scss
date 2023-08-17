@@ -1,6 +1,6 @@
 .iconContainer {
-  height: 152px;
-  width: 85px;
+  height: 100px;
+  width: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,13 +10,19 @@
   }
 
   &:first-child {
-    position: absolute;
-    left: -85px;
+    //position: absolute;
+    //left: -85px;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .iconContainer {
     display: none;
+  }
+}
+
+.imgWrapper {
+  & img {
+    border-radius: 32px;
   }
 }
