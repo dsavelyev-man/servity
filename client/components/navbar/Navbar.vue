@@ -1,27 +1,29 @@
 <template>
   <header :class="classes.header">
     <Container :class="$style.content">
-      <Logo :dark="show ? show : blocks.dark" />
-      <ul :class="$style.links">
-        <li :class="$style.linkWrapper">
-          <NavbarMenu :dark="blocks.dark" :list="menus.about"> КОМПАНИЯ </NavbarMenu>
-        </li>
-        <li :class="$style.linkWrapper">
-          <NavbarMenu :dark="blocks.dark" :list="menus.competencies"> КОМПЕТЕНЦИИ </NavbarMenu>
-        </li>
-        <li :class="$style.linkWrapper">
-          <NavbarMenu :dark="blocks.dark" :list="menus.events"> СОБЫТИЯ </NavbarMenu>
-        </li>
-        <li :class="$style.linkWrapper">
-          <NuxtLink :class="$style.link" to="/contacts"> КОНТАКТЫ </NuxtLink>
-        </li>
-      </ul>
-      <NuxtLink to="/equipment">
-        <Button :class="[$style.configuratorButton, $style.button]"> ПОЛУЧИТЬ КП </Button>
-      </NuxtLink>
-      <Button :class="[$style.button, $style.consultationButton]" @click="setShowPopup">
-        КОНСУЛЬТАЦИЯ
-      </Button>
+      <div :class="$style.container">
+        <Logo :dark="show ? show : blocks.dark" />
+        <ul :class="$style.links">
+          <li :class="$style.linkWrapper">
+            <NavbarMenu :dark="blocks.dark" :list="menus.about"> КОМПАНИЯ </NavbarMenu>
+          </li>
+          <li :class="$style.linkWrapper">
+            <NavbarMenu :dark="blocks.dark" :list="menus.competencies"> КОМПЕТЕНЦИИ </NavbarMenu>
+          </li>
+          <li :class="$style.linkWrapper">
+            <NavbarMenu :dark="blocks.dark" :list="menus.events"> СОБЫТИЯ </NavbarMenu>
+          </li>
+          <li :class="$style.linkWrapper">
+            <NuxtLink :class="$style.link" to="/contacts"> КОНТАКТЫ </NuxtLink>
+          </li>
+        </ul>
+        <NuxtLink to="/equipment">
+          <Button :class="[$style.configuratorButton, $style.button]"> ПОЛУЧИТЬ КП </Button>
+        </NuxtLink>
+        <Button :class="[$style.button, $style.consultationButton]" @click="setShowPopup">
+          КОНСУЛЬТАЦИЯ
+        </Button>
+      </div>
       <a href="tel:+74959020099" :class="$style.phone"> +7-495-902-00-99 </a>
     </Container>
     <MobileMenu :show="show" :setShow="setShowMenu" />
@@ -48,7 +50,7 @@ const blocks = inject("blocks") as Ref<BlocksType>;
 const classes = computed(() => ({
   header: [
     $style.navbar,
-    blocks?.value.dark ? $style.headerDark : $style.headerLight,
+    blocks?.value?.dark ? $style.headerDark : $style.headerLight,
     show.value ? $style.showMobile : undefined,
   ],
   blur: blocks?.value.dark ? "" : $style.blurLight,
@@ -67,6 +69,16 @@ const $style = useCssModule();
 
 <style lang="scss" module>
 @import "scss/vars";
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
 
 .consultationButton {
   background-color: $button;
@@ -140,7 +152,6 @@ const $style = useCssModule();
 .phone {
   font-size: $text-default;
   text-decoration: none;
-  margin-left: 10rem;
   transition: $transition;
 }
 

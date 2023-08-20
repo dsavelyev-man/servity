@@ -5,7 +5,12 @@ import {AmocrmService} from "./amocrm.service";
 export class AmocrmController {
     constructor(private readonly amocrmService: AmocrmService) {}
 
-    @Get("test")
+    @Get()
+    data() {
+        return "DAASDSADADSA"
+    }
+
+    @Get("init")
     amocrm() {
         return this.amocrmService.checkOauth2()
     }

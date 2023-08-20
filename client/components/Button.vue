@@ -9,6 +9,8 @@
     background-color: $button-light;
     border: none;
     padding: 12px 25px;
+    color: $white;
+    letter-spacing: $text-default-spacing;
     border-radius: 10px;
     font-size: $text-default;
     cursor: pointer;

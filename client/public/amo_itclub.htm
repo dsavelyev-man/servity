@@ -1,0 +1,236 @@
+<div class="row giorgio">
+  <div class="itclub-form col-11 col-md-11 offset-lg-1">
+    <h2 class="itclub-form__title title title--70 text-color--white title--bottom-indent">
+      РЕГИСТРАЦИЯ
+    </h2>
+    <div class="itclub-form_iframe">
+      <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1153217",hash:"56ee497d69b076d99489ded764658a3b",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");</script><script id="amoforms_script_1153217" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1686652787"></script>
+    </div>
+    <h3 class="title title--50 itlcub-form__under-text text-color--white title--bottom-indent">
+      ОТПРАВЛЯЯ ДАННУЮ ФОРМУ ВЫ СОГЛАШАЕТЕСЬ С ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ И ДАЁТЕ СВОЁ СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ.
+      <br/>
+      <br/>
+      ЖДЕМ ВАС НА ВСТРЕЧЕ И УВЕРЕНЫ, ЧТО ОНА ПРИНЕСЕТ МНОГО ПОЛЕЗНОЙ ИНФОРМАЦИИ И ПОЗИТИВНЫХ ЭМОЦИЙ.
+    </h3>
+  </div>
+  <div class="itclub-popup hidden" id="itclubPopup">
+    <div class="itclub-popup__content title">
+      <div>
+        <center>БЛАГОДАРИМ ЗА РЕГИСТРАЦИЮ.</center>
+        <br/>
+        МЫ СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ УЧАСТИЯ
+      </div>
+      <button class="itclub-popup__button">Закрыть</button>
+    </div>
+    <div class="itclub-popup__background"></div>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById("itclubPopup")
+  const popupButton = popup.querySelector(".itclub-popup__button")
+
+  const showItclubPopup = () => {
+    popup.classList.remove("hidden")
+  }
+
+  popupButton.onclick = () => {
+    if(!popup.classList.contains("hidden")) {
+      popup.classList.add("hidden")
+    }
+  }
+
+  amo_forms_loaded(function (params) {
+    console.log(amo_forms_params)
+
+    const el = document.querySelector(".preloader");
+
+    if(!el.classList.contains("isHide")) {
+      el.classList.add("isHide")
+    }
+
+
+    amo_forms_params.onFormSubmit((data) => {
+      if(data.status == 'success') {
+        showItclubPopup()
+      }
+    })
+  })
+</script>
+
+<style>
+    .itclub-form__title.itclub-form__title {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    .itlcub-form__under-text.itlcub-form__under-text {
+        font-size: 1.8rem;
+        margin-bottom: 80px;
+        letter-spacing: .08em;
+    }
+
+    @font-face {
+        font-family: "Giorgio Sans LC";
+        src: url("/fonts/GiorgioSansLC-Regular.woff");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Giorgio Sans LC";
+        src: url("/fonts/GiorgioSansLC-Light.woff2");
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    .giorgio * {
+        font-family: "Giorgio Sans LC", sans-serif;
+    }
+
+    .itclub-popup {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .itclub-popup.hidden {
+        display: none;
+    }
+
+    .itclub-popup__background {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        animation: itclub-popup__background-show 1s forwards;
+    }
+
+    @keyframes itclub-popup__background-show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .itclub-popup__content {
+        color: #FFFFFF;
+        padding: 40px;
+        margin-bottom: 80px;
+        font-size: 2.4rem;
+        letter-spacing: 0.08em;
+        z-index: 999;
+        background-color: #1D1D1D;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+        animation: itclub-popup__content-show 1s forwards cubic-bezier(.17,.67,.51,1.16);
+    }
+
+    @keyframes itclub-popup__content-show {
+        from {
+            top: 0%;
+        }
+
+        to {
+            top: 50%;
+        }
+    }
+
+    .itclub-popup__button {
+        color: #000000;
+        font-size: 2.4rem;
+        letter-spacing: 0.08em;
+        height: 42px;
+        font-weight: 500;
+        background-color: #ffffff;
+        border-radius: 10px;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .itclub-form__title {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    .itclub-form {
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .itlcub-form__under-text {
+        font-size: 2.4rem;
+        margin-bottom: 80px;
+        letter-spacing: .08em;
+    }
+
+    .itclub-form_iframe {
+        width: 50%;
+    }
+
+    @media (max-width: 1023px) {
+        .itclub-form_iframe {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .itclub-form {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .itclub-popup__content {
+            width: calc(100% - 20px);
+            text-align: center
+        }
+    }
+
+    .text-color--white {
+        color: #FFFFFF;
+    }
+
+    .title--70 {
+        letter-spacing: .08em;
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 992px) {
+        .title--70 {
+            font-size: 7rem;
+            margin-top: -0.8rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .title {
+        font-family: 'Giorgio Sans LC',sans-serif;
+        font-weight: 300;
+        line-height: 1;
+    }
+
+    .text--title {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+    }
+
+    blockquote, figure, h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+    }
+
+</style>

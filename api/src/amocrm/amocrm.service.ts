@@ -6,8 +6,11 @@ import { Client } from "amocrm-js"
 export class AmocrmService {
     private readonly amocrm = "https://www.amocrm.ru"
     constructor(private readonly httpService: HttpService) {
+    }
+
+    async checkOauth2() {
         const crm = new Client({
-            domain: "servity.ru",
+            domain: "api.servity.ru",
             auth: {
                 client_id: process.env.AMO_ID,
                 code: process.env.AMO_AUTH,
@@ -16,20 +19,14 @@ export class AmocrmService {
             }
         })
 
-        const test = async () => {
-            try {
-                const data = await crm.request.get("/api/v4/leads")
+        try {
+            const data = await crm.request.get("/api/v4/leads")
 
-                console.log(data)
-            } catch (e) {
-                console.log(e)
-            }
+            console.log(data)
+            return data
+        } catch (e) {
+            console.log(e)
+            return e
         }
-
-        test()
-    }
-
-    async checkOauth2() {
-
     }
 }
