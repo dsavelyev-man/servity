@@ -11,11 +11,13 @@ import { APP_INTERCEPTOR } from "@nestjs/core";
 import { AdminSourceInterceptor } from "./interceptors/AdminSource.interceptor";
 import { ServeStaticModule } from "@nestjs/serve-static"
 import { join } from "path";
+import { AmocrmModule } from './amocrm/amocrm.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true
+      isGlobal: true,
+      envFilePath: join(__dirname, "../../.env")
     }),
     TypeOrmModule.forRoot({
       type: "mysql",
@@ -31,7 +33,8 @@ import { join } from "path";
       rootPath: join(__dirname, "..", "static")
     }),
     AdminModule,
-    PostsModule
+    PostsModule,
+    AmocrmModule
   ],
   controllers: [AppController],
   providers: [AppService, {
