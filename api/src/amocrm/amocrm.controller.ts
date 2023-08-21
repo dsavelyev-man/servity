@@ -1,7 +1,7 @@
 import {Controller, Get} from '@nestjs/common';
 import {AmocrmService} from "./amocrm.service";
 
-@Controller('amocrm')
+@Controller('api/amocrm')
 export class AmocrmController {
     constructor(private readonly amocrmService: AmocrmService) {}
 

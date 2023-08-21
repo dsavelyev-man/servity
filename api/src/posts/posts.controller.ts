@@ -6,7 +6,7 @@ import {from, map} from "rxjs";
 import { FileInterceptor } from "@nestjs/platform-express";
 import { SaveFile } from "../decorators/SaveFile.decorator";
 
-@Controller('posts')
+@Controller('api/posts')
 export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
