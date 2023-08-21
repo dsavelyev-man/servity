@@ -5,6 +5,7 @@
     <!--        <Loader/>-->
     <slot />
     <Footer />
+    <Preloader/>
   </div>
 </template>
 
