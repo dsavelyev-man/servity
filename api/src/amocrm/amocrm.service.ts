@@ -10,7 +10,7 @@ export class AmocrmService {
 
     async checkOauth2() {
         const crm = new Client({
-            domain: "api.servity.ru",
+            domain: process.env.DOMAIN,
             auth: {
                 client_id: process.env.AMO_ID,
                 code: process.env.AMO_AUTH,
